@@ -3,11 +3,14 @@ package job_agency.job_agency;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.log4j.BasicConfigurator;
 
 
 public class WorkflowMain {
 
 	public static void main(String[] args) {
+		BasicConfigurator.configure();
+		
 		CamelContext cc=new DefaultCamelContext();
 		try {
 			cc.addRoutes(
