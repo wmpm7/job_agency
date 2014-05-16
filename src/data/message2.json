@@ -1,0 +1,29 @@
+{
+	"person":{
+		"user": "Bobbi",
+		"firstName": "Bob",
+		"lastName": "Baumeister",
+		"sex": "m",
+		"birthday": {
+			"day":
+			"month":
+			"year":
+		},
+		"address":{
+			"postalcode":
+			"city":
+		},
+		"highesteducation":{
+			"self":
+			"mother":
+			"father":
+		},
+		"email":
+	},
+	"questions":{
+		"what":
+		"where":
+		"with":
+	}
+
+}
