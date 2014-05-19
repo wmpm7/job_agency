@@ -30,3 +30,17 @@
 		</with>
 	</questions>
 </questionnaire>
+<!--  
+<?xml version="1.0" encoding="UTF-8"?>
+<person user="james">
+	<firstName>James</firstName>
+	<lastName>Strachan</lastName>
+	<city>London</city>
+</person>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<person user="hiram">
+	<firstName>Hiram</firstName>
+	<lastName>Chirino</lastName>
+	<city>Tampa</city>
+</person> -->
