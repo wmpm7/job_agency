@@ -19,7 +19,7 @@ public class WorkflowMain {
 			            @Override
 			            public void configure() throws Exception
 			            {
-			            	from("file:C:/Users/Kevin/Desktop/blub").process(new LoggingProcessor()).bean(new TransformationBean(),"makeUpperCase").to("file:C:/Users/Kevin/Desktop/huhu");
+			            	from("file:/Users/ireneeichinger/blub").process(new LoggingProcessor()).bean(new TransformationBean(),"makeUpperCase").to("file:/Users/ireneeichinger/huhu");
 			            	//from("file:C:/Users/Kevin/Desktop/blub").to("file:C:/Users/Kevin/Desktop/huhu");
 			            }
 

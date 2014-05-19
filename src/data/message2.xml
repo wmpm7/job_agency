@@ -11,8 +11,9 @@
 	  </birthday>
 	  
 	  <address>
-	  	<postalcode>1010</postalcode>
-	  	<city>Wien</city>
+	  	<postalcode>11111</postalcode>
+	  	<city>Berlin</city>
+	  	<country>D</country>
 	  </address>
 	  <highesteduction>
 	  	<self></self>

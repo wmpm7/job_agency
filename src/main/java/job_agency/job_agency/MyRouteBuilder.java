@@ -29,15 +29,7 @@ public class MyRouteBuilder extends RouteBuilder {
                     .log("Other message")
                     .to("file:target/messages/others");
     	
-    	
-    	/**
-    	 * PUBLISH SUBSCRIBE HELLO WORLD
-    	 */
-    	//from("file:src/data?noop=true")
-    	//.multicast().to("file:target/messages/others");
-    	
-    	//from("file:src/data?noop=true")
-        	//.multicast().to("file:target/messages/uk", "file:target/messages/others");
+
     	
     }
 
