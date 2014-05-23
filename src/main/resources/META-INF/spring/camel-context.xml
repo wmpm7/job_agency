@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+	<camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+		<package>org.apache.camel.example.spring</package>
+	</camelContext>
+
+	<!-- lets configure the default ActiveMQ broker URL -->
+	<bean id="jmss" class="org.apache.camel.component.jms.JmsComponent">
+		<property name="connectionFactory">
+			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+				<property name="brokerURL"
+					value="vm://localhost?broker.persistent=false&amp;broker.useJmx=true" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="SomeBean" class="job_agency.job_agency.beans.SomeBean" />
+		<!-- <bean id="AdvertManager" class="com.mycompany.manager.impl.AdvertManager" 
+			scope="singleton"> -->
+
+</beans>

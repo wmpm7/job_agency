@@ -1,4 +1,4 @@
-package job_agency.job_agency;
+package job_agency.job_agency.processors;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

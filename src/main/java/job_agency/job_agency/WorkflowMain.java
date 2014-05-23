@@ -1,5 +1,8 @@
 package job_agency.job_agency;
 
+import job_agency.job_agency.beans.TransformationBean;
+import job_agency.job_agency.processors.LoggingProcessor;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;

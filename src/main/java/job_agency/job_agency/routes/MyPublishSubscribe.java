@@ -1,4 +1,4 @@
-package job_agency.job_agency;
+package job_agency.job_agency.routes;
 
 import org.apache.camel.builder.RouteBuilder;
 
