@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire>
+	<person user="hiram">
+	  <firstName>Hiram</firstName>
+	  <lastName>Chirino</lastName>
+	  <sex>m</sex>
+	  <birthday>
+	   	<day>3</day>
+	    <month>12</month>
+	  	<year>1975</year>
+	  </birthday>
+	  
+	  <address>
+	  	<postalcode>11111</postalcode>
+	  	<city>Berlin</city>
+	  	<country>D</country>
+	  </address>
+	  <highesteduction>
+	  	<self></self>
+	  	<mother></mother>
+	  	<father></father>
+	  </highesteduction>
+	  <email></email>
+	</person>
+	<questions>
+		<what>
+		</what>
+		<where>
+		</where>
+		<with>
+		</with>
+	</questions>
+</questionnaire>
