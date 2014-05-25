@@ -1,6 +1,8 @@
 package job_agency.job_agency;
 
 import job_agency.job_agency.routes.MyRouteBuilder;
+import job_agency.job_agency.routes.StatisticToTwitter;
+
 import org.apache.camel.spring.Main;
 
 public class MainApp {
@@ -8,7 +10,7 @@ public class MainApp {
     public static void main(String... args) throws Exception {
         Main main = new Main();
         main.enableHangupSupport();
-        main.addRouteBuilder(new MyRouteBuilder());
+        //main.addRouteBuilder(new MyRouteBuilder());
         //main.addRouteBuilder(new MyPublishSubscribe());
         //main.addRouteBuilder(new MyMessageFilter());
         
@@ -41,7 +43,7 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToFacebook());
 
         //Route10 statistic2Twitter (process -> API)
-        //main.addRouteBuilder(new Statistic2Twitter());
+        main.addRouteBuilder(new StatisticToTwitter());
         
         //Route11 statistic2Website with processor for PDF (process -> API)
         //main.addRouteBuilder(new StatisticToWebsite());

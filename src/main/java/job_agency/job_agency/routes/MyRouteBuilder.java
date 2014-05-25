@@ -34,6 +34,6 @@ public class MyRouteBuilder extends RouteBuilder {
 			.log("Working on file ${header.CamelFileName}")
 			.setHeader("subject", constant("My Subject"))
 			.to("smtp://wmpm.group7@smtp.gmail.com:25?password=blubb123&username=wmpm.group7&mail.smtp.starttls.enable=true&to=kevin17@gmx.at");
-			email-adresse ändern zum testen. brauch keinen spam :P
+			//email-adresse ändern zum testen. brauch keinen spam :P
     }
 }
