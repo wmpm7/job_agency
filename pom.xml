@@ -67,10 +67,16 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!--  JSON to XML converter -->
+		<!--  JSON to POJO converter -->
 		<dependency>
 		  <groupId>org.apache.camel</groupId>
 		  <artifactId>camel-jackson</artifactId>
+		 </dependency>
+		  
+		  <!--  XML TO POJO -->
+		  <dependency> 
+		  	<groupId>org.apache.camel</groupId> 
+		  	<artifactId>camel-jaxb</artifactId> 
 		  </dependency>
 		
 

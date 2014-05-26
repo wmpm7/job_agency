@@ -1,6 +1,6 @@
 package job_agency.job_agency;
 
-import job_agency.job_agency.routes.JSONToPOJO;
+import job_agency.job_agency.routes.FileToDatabaseRouter;
 import job_agency.job_agency.routes.MyRouteBuilder;
 import job_agency.job_agency.routes.StatisticToTwitter;
 
@@ -12,7 +12,14 @@ public class MainApp {
         Main main = new Main();
         main.enableHangupSupport();
         
-        main.addRouteBuilder(new JSONToPOJO());
+        
+        //STEP 1: INSERT XML AND JSON FILES INTO DATABASE
+        //derzeit erst bis Queue umgesetzt... Queue --> Database fehlt
+        main.addRouteBuilder(new FileToDatabaseRouter());
+        
+        
+        
+        
         //main.addRouteBuilder(new MyRouteBuilder());
         //main.addRouteBuilder(new MyPublishSubscribe());
         //main.addRouteBuilder(new MyMessageFilter());
