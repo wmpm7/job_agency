@@ -4,7 +4,7 @@ import job_agency.job_agency.processors.InsertProcessor;
 
 import org.apache.camel.builder.RouteBuilder;
 
-public class QueryToDBRoute extends RouteBuilder{
+public class QueueToDBRoute extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {

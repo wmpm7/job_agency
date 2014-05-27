@@ -34,7 +34,7 @@ public class InsertProcessor implements Processor {
 		date = date + qu.person.getBirthday().getMonth() + "-" + qu.person.getBirthday().getYear();
 */
 		sqlstmt = "insert into Person " + 
-				"(username,firstname,lastname,sex,birthday,educationself,educationmother,educationfather,email) " + 
+				"(username,firstname,lastname,sex,birthday,postalcode,city,country,educationself,educationmother,educationfather,email) " + 
 				"values (" +  
 				"'" + qu.person.getUser() + "','" 
 				+ qu.person.getFirstName() + "','" 
@@ -42,6 +42,9 @@ public class InsertProcessor implements Processor {
 				+ qu.person.getSex() + "'," 
 				//+ "TO_DATE( '" + date + "', 'DD-MM-YYYY' ),'"
 				+ "'" + date + "','"
+				+ qu.person.getAddress().getPostalcode() + "','" 
+				+ qu.person.getAddress().getCity() + "','" 
+				+ qu.person.getAddress().getCountry() + "','" 
 				+ qu.person.getHighesteducation().getSelf() + "','" 
 				+ qu.person.getHighesteducation().getMother() + "','" 
 				+ qu.person.getHighesteducation().getFather() + "','" 

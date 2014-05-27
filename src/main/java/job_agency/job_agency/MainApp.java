@@ -2,7 +2,10 @@ package job_agency.job_agency;
 
 
 import job_agency.job_agency.routes.FileToQueryRoute;
-import job_agency.job_agency.routes.QueryToDBRoute;
+import job_agency.job_agency.routes.JobofferQueueToDBRoute;
+import job_agency.job_agency.routes.JobofferToQueueRoute;
+import job_agency.job_agency.routes.QueueToDBRoute;
+
 import org.apache.camel.spring.Main;
 import org.apache.log4j.BasicConfigurator;
 
@@ -19,14 +22,14 @@ public class MainApp {
         //main.addRouteBuilder(new MyMessageFilter());
         
         
-        //Route1 file2POJO (inbound -> process) [questionnaire}
+        //Route1 file2Queue [questionnaire]
         main.addRouteBuilder(new FileToQueryRoute());
         
         //Route2 Filter useless 
         //main.addRouteBuilder(new MyMessageFilter());
 
-        //Route3 save2DB (process -> DB)  [questionnaire]
-        main.addRouteBuilder(new QueryToDBRoute());
+        //Route3 save2DB (queue -> DB)  [questionnaire]
+        main.addRouteBuilder(new QueueToDBRoute());
         
         //Route4 calcInterests 
         //main.addRouteBuilder(new calcInterests());
@@ -61,11 +64,11 @@ public class MainApp {
         //Route14 PublishSubscribe
         //main.addRouteBuilder(new MyPublishSubscribe());
         
-        //Route15 file2POJO (inbound -> process) [job offer]
-        //main.addRouteBuilder(new FileToPOJO());
+        //Route15 file2Queue [job offer]
+        main.addRouteBuilder(new JobofferToQueueRoute());
         
-        //Route3 save2DB (process -> DB) [job offer]
-        //main.addRouteBuilder(new SaveToDB());
+        //Route16 save2DB (queue -> DB) [job offer]
+        main.addRouteBuilder(new JobofferQueueToDBRoute());
         
         main.run(args);
     }

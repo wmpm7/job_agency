@@ -41,17 +41,32 @@ public class DatabaseBean {
     public void create() throws Exception {
         JdbcTemplate jdbc = new JdbcTemplate(dataSource);
 
-        String sql = "create table Person (\n"
+        String sqlperson = "create table Person (\n"
               + "  id integer primary key GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),\n"
               + "  username varchar(20),\n"
               + "  firstname varchar(20),\n"
               + "  lastname varchar(20),\n"
               + "  sex varchar(10),\n"
               + "  birthday Date,\n"
+              + "  postalcode varchar(20),\n"
+              + "  city varchar(20),\n"
+              + "  country varchar(3),\n"
               + "  educationself varchar(30),\n"
               + "  educationmother varchar(30),\n"
               + "  educationfather varchar(30),\n"
               + "  email varchar(30)\n"
+              + ")";
+        
+        String sqljoboffer = "create table joboffer (\n"
+              + "  id integer primary key GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),\n"
+              + "  title varchar(20),\n"
+              + "  postalcode varchar(20),\n"
+              + "  city varchar(20),\n"
+              + "  country varchar(3),\n"
+              + "  phone varchar(30),\n"
+              + "  email varchar(30),\n"
+              + "  jobdescription varchar(300),\n"
+              + "  salary varchar(30)\n"
               + ")";
 
 
@@ -59,13 +74,16 @@ public class DatabaseBean {
 
         try {
             jdbc.execute("drop table person");
+            jdbc.execute("drop table joboffer");
         } catch (Throwable e) {
             // ignore
         }
 
-        jdbc.execute(sql);
+        jdbc.execute(sqlperson);
+        jdbc.execute(sqljoboffer);
 
         LOG.info("... created table person");
+        LOG.info("... created table joboffer");
     }
 
     public void destroy() throws Exception {
@@ -73,6 +91,7 @@ public class DatabaseBean {
 
         try {
             jdbc.execute("drop table person");
+            jdbc.execute("drop table joboffer");
         } catch (Throwable e) {
             // ignore
         }
