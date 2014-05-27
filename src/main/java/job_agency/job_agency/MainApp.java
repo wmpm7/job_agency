@@ -3,6 +3,8 @@ package job_agency.job_agency;
 
 import job_agency.job_agency.routes.FileToQueryRoute;
 import job_agency.job_agency.routes.QueryToDBRoute;
+import job_agency.job_agency.routes.StatisticToFacebook;
+
 import org.apache.camel.spring.Main;
 import org.apache.log4j.BasicConfigurator;
 
@@ -44,7 +46,7 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToEmail());
         
         //Route9 statistic2FB (process -> API)
-        //main.addRouteBuilder(new StatisticToFacebook());
+        main.addRouteBuilder(new StatisticToFacebook());
 
         //Route10 statistic2Twitter (process -> API)
         //main.addRouteBuilder(new StatisticToTwitter());

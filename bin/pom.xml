@@ -80,31 +80,26 @@
 		</dependency>
 
 		<!-- camel sql -->
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-sql</artifactId>
-		</dependency>
-
+       <dependency>
+           <groupId>org.apache.camel</groupId>
+           <artifactId>camel-sql</artifactId>
+       </dependency>
+		
 		<!-- DERBY -->
 		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derby</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-		</dependency>
-
+           <groupId>org.apache.derby</groupId>
+           <artifactId>derby</artifactId>
+       </dependency>
+       
+       <dependency>
+           <groupId>commons-dbcp</groupId>
+           <artifactId>commons-dbcp</artifactId>
+       </dependency>
+		
 		<!-- jdbc -->
 		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-jdbc</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-facebook</artifactId>
+    		<groupId>org.apache.camel</groupId>
+    		<artifactId>camel-jdbc</artifactId>
 		</dependency>
 
 	</dependencies>

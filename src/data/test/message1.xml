@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire>
+	<person>
+	  <user>james</user>
+	  <firstName>James</firstName>
+	  <lastName>Strachan</lastName>
+	  <sex>m</sex>
+	  <birthday>
+	   	<day>3</day>
+	    <month>12</month>
+	  	<year>1975</year>
+	  </birthday>
+	  
+	  <address>
+	  	<postalcode>1120</postalcode>
+	  	<city>Wien</city>
+	  	<country>AUT</country>
+	  </address>
+	  <highesteducation>
+	  	<self>Uni Wien</self>
+	  	<mother>TU Wien</mother>
+	  	<father>Matura</father>
+	  </highesteducation>
+	  <email>blabla@mail.at</email>
+	</person>
+	<questions>
+		<what>
+		</what>
+		<where>
+		</where>
+		<with>
+		</with>
+	</questions>
+</questionnaire>
+<!--  
+<?xml version="1.0" encoding="UTF-8"?>
+<person user="james">
+	<firstName>James</firstName>
+	<lastName>Strachan</lastName>
+	<city>London</city>
+</person>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<person user="hiram">
+	<firstName>Hiram</firstName>
+	<lastName>Chirino</lastName>
+	<city>Tampa</city>
+</person> -->
