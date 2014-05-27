@@ -1,7 +1,7 @@
 package job_agency.job_agency;
 
 
-import job_agency.job_agency.routes.FileToQueryRoute;
+import job_agency.job_agency.routes.FileToQueueRoute;
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
@@ -23,7 +23,7 @@ public class MainApp {
         
         
         //Route1 file2Queue [questionnaire]
-        main.addRouteBuilder(new FileToQueryRoute());
+        main.addRouteBuilder(new FileToQueueRoute());
         
         //Route2 Filter useless 
         //main.addRouteBuilder(new MyMessageFilter());
