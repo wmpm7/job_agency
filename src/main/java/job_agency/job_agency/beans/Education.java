@@ -4,6 +4,7 @@ public class Education {
     private String self;
     private String mother;
     private String father;
+    
 	public String getSelf() {
 		return self;
 	}

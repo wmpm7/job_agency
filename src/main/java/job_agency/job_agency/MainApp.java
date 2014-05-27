@@ -1,10 +1,10 @@
 package job_agency.job_agency;
 
-import job_agency.job_agency.routes.FileToDatabaseRouter;
-import job_agency.job_agency.routes.MyRouteBuilder;
-import job_agency.job_agency.routes.StatisticToTwitter;
 
+import job_agency.job_agency.routes.FileToQueryRoute;
+import job_agency.job_agency.routes.QueryToDBRoute;
 import org.apache.camel.spring.Main;
+import org.apache.log4j.BasicConfigurator;
 
 public class MainApp {
 
@@ -12,13 +12,7 @@ public class MainApp {
         Main main = new Main();
         main.enableHangupSupport();
         
-        
-        //STEP 1: INSERT XML AND JSON FILES INTO DATABASE
-        //derzeit erst bis Queue umgesetzt... Queue --> Database fehlt
-        main.addRouteBuilder(new FileToDatabaseRouter());
-        
-        
-        
+        BasicConfigurator.configure();
         
         //main.addRouteBuilder(new MyRouteBuilder());
         //main.addRouteBuilder(new MyPublishSubscribe());
@@ -26,13 +20,13 @@ public class MainApp {
         
         
         //Route1 file2POJO (inbound -> process) [questionnaire}
-        //main.addRouteBuilder(new FileToPOJO());
+        main.addRouteBuilder(new FileToQueryRoute());
         
         //Route2 Filter useless 
         //main.addRouteBuilder(new MyMessageFilter());
 
         //Route3 save2DB (process -> DB)  [questionnaire]
-        //main.addRouteBuilder(new SaveToDB());
+        main.addRouteBuilder(new QueryToDBRoute());
         
         //Route4 calcInterests 
         //main.addRouteBuilder(new calcInterests());
