@@ -8,7 +8,7 @@ public class QueueToDBRoute extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {
-		from("jms:PojoInsertQueue")
+		from("jms:FilteredInsertQueue")
 			.process(new InsertProcessor())
 		//.to("jms:awef");
 			.to("jdbc:dataSource");
