@@ -2,8 +2,10 @@ package job_agency.job_agency;
 
 
 import job_agency.job_agency.routes.FileToQueryRoute;
+import job_agency.job_agency.routes.FilterQueueRoute;
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
+import job_agency.job_agency.routes.MyMessageFilter;
 import job_agency.job_agency.routes.QueueToDBRoute;
 
 import org.apache.camel.spring.Main;
@@ -26,7 +28,7 @@ public class MainApp {
         main.addRouteBuilder(new FileToQueryRoute());
         
         //Route2 Filter useless 
-        //main.addRouteBuilder(new MyMessageFilter());
+        main.addRouteBuilder(new FilterQueueRoute());
 
         //Route3 save2DB (queue -> DB)  [questionnaire]
         main.addRouteBuilder(new QueueToDBRoute());
