@@ -9,7 +9,7 @@ import org.apache.camel.converter.jaxb.JaxbDataFormat;
 import org.apache.camel.model.dataformat.JsonLibrary;
 import org.apache.camel.spi.DataFormat;
 
-public class FileToQueryRoute extends RouteBuilder{
+public class FileToQueueRoute extends RouteBuilder{
 
 	@Override
 	

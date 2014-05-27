@@ -1,8 +1,10 @@
 package job_agency.job_agency;
 
 
-import job_agency.job_agency.routes.FileToQueryRoute;
-import job_agency.job_agency.routes.QueryToDBRoute;
+import job_agency.job_agency.routes.FileToQueueRoute;
+import job_agency.job_agency.routes.JobofferQueueToDBRoute;
+import job_agency.job_agency.routes.JobofferToQueueRoute;
+import job_agency.job_agency.routes.QueueToDBRoute;
 import job_agency.job_agency.routes.StatisticToFacebook;
 
 import org.apache.camel.spring.Main;
@@ -21,14 +23,14 @@ public class MainApp {
         //main.addRouteBuilder(new MyMessageFilter());
         
         
-        //Route1 file2POJO (inbound -> process) [questionnaire}
-        main.addRouteBuilder(new FileToQueryRoute());
+        //Route1 file2Queue [questionnaire]
+        main.addRouteBuilder(new FileToQueueRoute());
         
         //Route2 Filter useless 
         //main.addRouteBuilder(new MyMessageFilter());
 
-        //Route3 save2DB (process -> DB)  [questionnaire]
-        main.addRouteBuilder(new QueryToDBRoute());
+        //Route3 save2DB (queue -> DB)  [questionnaire]
+        main.addRouteBuilder(new QueueToDBRoute());
         
         //Route4 calcInterests 
         //main.addRouteBuilder(new calcInterests());
@@ -46,7 +48,7 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToEmail());
         
         //Route9 statistic2FB (process -> API)
-        main.addRouteBuilder(new StatisticToFacebook());
+        //main.addRouteBuilder(new StatisticToFacebook());
 
         //Route10 statistic2Twitter (process -> API)
         //main.addRouteBuilder(new StatisticToTwitter());
@@ -63,11 +65,11 @@ public class MainApp {
         //Route14 PublishSubscribe
         //main.addRouteBuilder(new MyPublishSubscribe());
         
-        //Route15 file2POJO (inbound -> process) [job offer]
-        //main.addRouteBuilder(new FileToPOJO());
+        //Route15 file2Queue [job offer]
+        main.addRouteBuilder(new JobofferToQueueRoute());
         
-        //Route3 save2DB (process -> DB) [job offer]
-        //main.addRouteBuilder(new SaveToDB());
+        //Route16 save2DB (queue -> DB) [job offer]
+        main.addRouteBuilder(new JobofferQueueToDBRoute());
         
         main.run(args);
     }

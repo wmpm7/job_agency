@@ -11,7 +11,8 @@
 		},
 		"address":{
 			"postalcode": "awefawef",
-			"city": "Wien"
+			"city": "Wien",
+			"country": "AUT"
 		},
 		"highesteducation":{
 			"self": "TU Wien",

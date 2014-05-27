@@ -17,3 +17,9 @@ public class StatisticToFacebook extends RouteBuilder{
 	}
 
 }
+
+//wennst was brauchst bin ich jederzeit erreichbar
+//mein facebook login: roscoe.baston@hotmail.com	pass:ekms67
+//auf facebook for developer kannst rein
+//bis jetzt nach besten wissen und gewissen gamcht -- ich vermut es fehlt nicht viel ..
+//oauthappid und oauthappsecret sind ziemlich sicher richtig --> ich vermute der fehler liegt beim accesstoken
