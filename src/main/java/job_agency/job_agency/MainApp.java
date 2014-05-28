@@ -1,9 +1,10 @@
 package job_agency.job_agency;
 
 
+import job_agency.job_agency.routes.AggregateEmail;
+import job_agency.job_agency.routes.CalcStatistic;
 import job_agency.job_agency.routes.FileToQueueRoute;
 import job_agency.job_agency.routes.FilterQueueRoute;
-
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
@@ -44,7 +45,7 @@ public class MainApp {
         //main.addRouteBuilder(new SearchJobExtern());
         
         //Route7 calcStatistic 
-        //main.addRouteBuilder(new calcStatistic());
+        main.addRouteBuilder(new CalcStatistic());
         
         //Route8 statistic2Email 
         //main.addRouteBuilder(new StatisticToEmail());
@@ -57,6 +58,12 @@ public class MainApp {
         
         //Route11 statistic2Website with processor for PDF (process -> API)
         //main.addRouteBuilder(new StatisticToWebsite());
+        
+        //Route15 file2Queue [job offer]
+        main.addRouteBuilder(new JobofferToQueueRoute());
+        
+        //Route16 save2DB (queue -> DB) [job offer]
+        main.addRouteBuilder(new JobofferQueueToDBRoute());
 
         //Route12 aggregateEmail (process -> outbound)
         //main.addRouteBuilder(new AggregateEmail());
@@ -67,11 +74,7 @@ public class MainApp {
         //Route14 PublishSubscribe
         //main.addRouteBuilder(new MyPublishSubscribe());
         
-        //Route15 file2Queue [job offer]
-        main.addRouteBuilder(new JobofferToQueueRoute());
-        
-        //Route16 save2DB (queue -> DB) [job offer]
-        main.addRouteBuilder(new JobofferQueueToDBRoute());
+
         
         main.run(args);
     }
