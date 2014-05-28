@@ -58,12 +58,6 @@ public class MainApp {
         
         //Route11 statistic2Website with processor for PDF (process -> API)
         //main.addRouteBuilder(new StatisticToWebsite());
-        
-        //Route15 file2Queue [job offer]
-        main.addRouteBuilder(new JobofferToQueueRoute());
-        
-        //Route16 save2DB (queue -> DB) [job offer]
-        main.addRouteBuilder(new JobofferQueueToDBRoute());
 
         //Route12 aggregateEmail (process -> outbound)
         //main.addRouteBuilder(new AggregateEmail());
@@ -73,6 +67,12 @@ public class MainApp {
 
         //Route14 PublishSubscribe
         //main.addRouteBuilder(new MyPublishSubscribe());
+        
+        //Route15 file2Queue [job offer]
+        main.addRouteBuilder(new JobofferToQueueRoute());
+        
+        //Route16 save2DB (queue -> DB) [job offer]
+        main.addRouteBuilder(new JobofferQueueToDBRoute());
         
 
         
