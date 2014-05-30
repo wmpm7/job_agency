@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <questionnaire>
-	<person user="hiram">
+	<person>
+	  <user>hiram</user>
 	  <firstName>Hiram</firstName>
 	  <lastName>Chirino</lastName>
 	  <sex>m</sex>
@@ -15,12 +16,12 @@
 	  	<city>Berlin</city>
 	  	<country>D</country>
 	  </address>
-	  <highesteduction>
-	  	<self></self>
-	  	<mother></mother>
-	  	<father></father>
-	  </highesteduction>
-	  <email></email>
+	  <highesteducation>
+	  	<self>Matura</self>
+	  	<mother>Lehre</mother>
+	  	<father>FH</father>
+	  </highesteducation>
+	  <email>mail@mail.at</email>
 	</person>
 	<questions>
 		<what>

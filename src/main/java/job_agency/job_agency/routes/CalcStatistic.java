@@ -25,7 +25,7 @@ public class CalcStatistic extends RouteBuilder{
 		.beanRef("CalcStatisticBean","calc")
 		.beanRef("CalcStatisticBean","makeUpperCase")
 		//.to("jms:EmailQueue");
-		.to("file://outbound");
+		.to("file://outbound/statJob");
 
 		//nur da damit man sieht wie man alle persons in eine Arraylist bekommt
 		from("timer://foo?period=30000")
@@ -36,7 +36,7 @@ public class CalcStatistic extends RouteBuilder{
 		.beanRef("CalcStatisticBean","addToList")
 		.beanRef("CalcStatisticBean","calc")
 		.beanRef("CalcStatisticBean","makeUpperCase")
-		.to("file://outbound");
+		.to("file://outbound/statPers");
 
 
 //		from("timer://foo?period=60000")

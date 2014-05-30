@@ -19,12 +19,12 @@ import org.slf4j.LoggerFactory;
 public class CalcStatisticBean 
 {
 
-	private static final Logger LOG = LoggerFactory.getLogger(DatabaseBean.class);
+	private static final Logger LOG = LoggerFactory.getLogger(CalcStatisticBean.class);
 	private ArrayList<Joboffer> jobs;
 	private ArrayList<Person> persons;
 
-	private int maleCounter = 0;
-	private int femaleCounter = 0;
+	private double maleCounter = 0;
+	private double femaleCounter = 0;
 
 	@BeanInject("Statistics")
 	Statistics stat;
@@ -57,18 +57,21 @@ public class CalcStatisticBean
 		}
 
 		//		arg0.getIn().setBody("Anzahl der Joboffers: "+al.size());
+		stat.setMaleCounter(maleCounter);
+		stat.setFemaleCounter(femaleCounter);
+		
 		this.maleCounter = 0;
 		this.femaleCounter = 0;
 	}
 
 	public Statistics calc ()
 	{
-		LOG.info("_____________m:" + maleCounter + "_______________");
-		LOG.info("_____________f:" + femaleCounter + "_______________");
+		LOG.info("_____________m:" + stat.getMaleCounter() + "_______________");
+		LOG.info("_____________f:" + stat.getFemaleCounter() + "_______________");
 
-		stat.setMaleCounter(maleCounter);
-		stat.setFemaleCounter(femaleCounter);
-		
+
+		stat.setPercentMale(stat.getMaleCounter() / stat.getNumberOfPeople());
+		stat.setPercentFemale(stat.getFemaleCounter() / stat.getNumberOfPeople());
 		
 		return stat;
 	}
@@ -109,11 +112,11 @@ public class CalcStatisticBean
 
 		if (p.getSex().equals("m"))
 		{
-			maleCounter++;
+			maleCounter = maleCounter + 1;
 		}
 		else
 		{
-			femaleCounter++;
+			femaleCounter = femaleCounter + 1;
 		}
 
 		return p;

@@ -22,7 +22,7 @@ public class FileToQueueRoute extends RouteBuilder{
 		
 		
 		
-		from("file:src/data?noop=true")
+		from("file://inbound/questionnaires?noop=true")
 		.log("start content-based rounting for incoming XML and JSON files")
 		.choice()
 			.when().simple("${file:name.ext} == 'json'").
