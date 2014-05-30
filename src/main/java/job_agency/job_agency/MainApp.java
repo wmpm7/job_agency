@@ -1,14 +1,11 @@
 package job_agency.job_agency;
 
-
-import job_agency.job_agency.routes.AggregateEmail;
 import job_agency.job_agency.routes.CalcStatistic;
 import job_agency.job_agency.routes.FileToQueueRoute;
 import job_agency.job_agency.routes.FilterQueueRoute;
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
-import job_agency.job_agency.routes.StatisticToFacebook;
 
 import org.apache.camel.spring.Main;
 import org.apache.log4j.BasicConfigurator;

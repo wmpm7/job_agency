@@ -1,18 +1,16 @@
 package job_agency.job_agency.processors;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import job_agency.job_agency.models.Address;
+import job_agency.job_agency.models.Birthday;
+import job_agency.job_agency.models.Education;
+import job_agency.job_agency.models.Person;
+
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-
-import job_agency.job_agency.beans.Address;
-import job_agency.job_agency.beans.Birthday;
-import job_agency.job_agency.beans.Education;
-import job_agency.job_agency.beans.Joboffer;
-import job_agency.job_agency.beans.Person;
 
 public class getallPersonProcessor implements Processor{
 

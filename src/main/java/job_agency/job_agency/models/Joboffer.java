@@ -1,4 +1,4 @@
-package job_agency.job_agency.beans;
+package job_agency.job_agency.models;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

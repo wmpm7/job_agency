@@ -1,15 +1,14 @@
 package job_agency.job_agency.processors;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import job_agency.job_agency.models.Address;
+import job_agency.job_agency.models.Joboffer;
+
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-
-import job_agency.job_agency.beans.Address;
-import job_agency.job_agency.beans.Joboffer;
 
 public class getallJobofferProcessor implements Processor{
 

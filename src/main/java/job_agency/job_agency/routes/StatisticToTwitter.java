@@ -7,10 +7,6 @@ public class StatisticToTwitter extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		
-		String consumerKey = "cWUXPi2e5hbOUPJlWIziWMKuS";
-		String consumerSecret = "ySBERvxm26PZJA1usxT88qnfzUwxu8gwXy7nti8JyD9Qw353Lo";
-		String accessToken = "2523357524-DuGqB5DgVXR7z6zjdoyyf7jFrR3SJ9tMCaubPwJ";
-		String accessTokenSecret = "3xNSFRfE9FR7sYe0HqMMwhBukSkO3mEleIOHAncsOkaaI";
 		
 		from("file://target/test?noop=true")
 		  .to("twitter://timeline/user?"

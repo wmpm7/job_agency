@@ -1,4 +1,5 @@
-package job_agency.job_agency.beans;
+package job_agency.job_agency.models;
+
 
 
 public class Person{

@@ -26,7 +26,7 @@
 
 	<bean id="SomeBean" class="job_agency.job_agency.beans.SomeBean" />
 	
-	<bean id="Person" class="job_agency.job_agency.beans.Person" />
+	<bean id="Person" class="job_agency.job_agency.models.Person" />
 	
 		<!-- <bean id="AdvertManager" class="com.mycompany.manager.impl.AdvertManager" 
 			scope="singleton"> -->

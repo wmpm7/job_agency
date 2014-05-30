@@ -1,5 +1,7 @@
 package job_agency.job_agency.routes;
 
+import job_agency.job_agency.beans.CalcStatisticBean;
+import job_agency.job_agency.beans.TransformationBean;
 import job_agency.job_agency.processors.getallJobofferProcessor;
 import job_agency.job_agency.processors.getallPersonProcessor;
 
@@ -19,6 +21,7 @@ public class CalcStatistic extends RouteBuilder{
 		.to("jdbc:dataSource")
 		.log("alle Joboffers werden ausgelesen")
 		.process(new getallJobofferProcessor())
+		.bean(new CalcStatisticBean(),"makeUpperCase")
 		.to("jms:EmailQueue");
 		
 		//nur da damit man sieht wie man alle persons in eine Arraylist bekommt
