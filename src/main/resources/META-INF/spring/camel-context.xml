@@ -26,7 +26,11 @@
 
 	<bean id="SomeBean" class="job_agency.job_agency.beans.SomeBean" />
 	
+	<bean id="CalcStatisticBean" class="job_agency.job_agency.beans.CalcStatisticBean" />
+	
 	<bean id="Person" class="job_agency.job_agency.models.Person" />
+	
+	<bean id="Statistics" class="job_agency.job_agency.models.Statistics" />
 	
 		<!-- <bean id="AdvertManager" class="com.mycompany.manager.impl.AdvertManager" 
 			scope="singleton"> -->
