@@ -17,12 +17,12 @@ public class getallPersonProcessor implements Processor{
 	@Override
 	public void process(Exchange arg0) throws Exception {
 		
-		List data = arg0.getIn().getBody(List.class);
+		List<?> data = arg0.getIn().getBody(List.class);
 		ArrayList<Person> al =new ArrayList<Person>();
 		
 		for(int i =0; i<data.size();i++)
 		{
-			Map row = (Map)data.get(i);
+			Map<?, ?> row = (Map<?, ?>)data.get(i);
 			
 			Person p = new Person();
 			Address a = new Address();

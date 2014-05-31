@@ -1,6 +1,7 @@
 package job_agency.job_agency.beans;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +38,10 @@ public class CalcStatisticBean
 
 	public void addToList(Exchange arg0) throws Exception {
 
-		LOG.info("___________________" + arg0.toString() + " ______________________");
+		this.jobs.clear();
+		this.persons.clear();
+		
+		LOG.debug("Body: " + arg0.toString());
 		List<?> data = arg0.getIn().getBody(List.class);
 
 		for(int i =0; i<data.size();i++)
@@ -59,20 +63,28 @@ public class CalcStatisticBean
 		//		arg0.getIn().setBody("Anzahl der Joboffers: "+al.size());
 		stat.setMaleCounter(maleCounter);
 		stat.setFemaleCounter(femaleCounter);
-		
+
 		this.maleCounter = 0;
 		this.femaleCounter = 0;
 	}
 
 	public Statistics calc ()
 	{
-		LOG.info("_____________m:" + stat.getMaleCounter() + "_______________");
-		LOG.info("_____________f:" + stat.getFemaleCounter() + "_______________");
+		LOG.debug("_____________m:" + stat.getMaleCounter() + "_______________");
+		LOG.debug("_____________f:" + stat.getFemaleCounter() + "_______________");
 
 
 		stat.setPercentMale(stat.getMaleCounter() / stat.getNumberOfPeople());
 		stat.setPercentFemale(stat.getFemaleCounter() / stat.getNumberOfPeople());
+
+		double ageCount = 0;
+		for(Person elem : this.persons)
+		{
+			ageCount = ageCount + elem.getBirthday().getAge();
+		}
+		stat.setMeanAge(ageCount / stat.getNumberOfPeople());
 		
+
 		return stat;
 	}
 
@@ -93,9 +105,18 @@ public class CalcStatisticBean
 		String month = parts[1]; // monat
 		String day = parts[2]; // tag
 
+		Calendar dob = Calendar.getInstance();
+		dob.set( Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day) );
+		//dob.setTime(dateOfBirth);
+		Calendar today = Calendar.getInstance();
+		int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+		if (today.get(Calendar.DAY_OF_YEAR) <= dob.get(Calendar.DAY_OF_YEAR)){age--;}
+
 		b.setDay(Integer.parseInt(day));
 		b.setMonth(Integer.parseInt(month));
 		b.setYear(Integer.parseInt(year));
+		b.setAge(age);
+
 		p.setBirthday(b);
 
 		e.setFather((String) row.get("EDUCATIONFATHER"));
