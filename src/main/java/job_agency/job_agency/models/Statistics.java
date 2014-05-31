@@ -86,10 +86,12 @@ public class Statistics {
 	 */
 	@Override
 	public String toString() {
-		return "Statistics [maleCounter=" + maleCounter + ", femaleCounter="
-				+ femaleCounter + ", percentMale=" + percentMale
-				+ ", percentFemale=" + percentFemale + ", meanAge=" + meanAge
-				+ "]";
+		return "Statistics \n "
+				+ "maleCounter=" + maleCounter 
+				+ "\n femaleCounter=" + femaleCounter 
+				+ "\n percentMale=" + percentMale
+				+ "\n percentFemale=" + percentFemale 
+				+ "\n meanAge=" + meanAge;
 	}
 
 }

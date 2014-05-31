@@ -6,6 +6,7 @@ import job_agency.job_agency.routes.FilterQueueRoute;
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
+import job_agency.job_agency.routes.StatisticToWebsite;
 
 import org.apache.camel.spring.Main;
 import org.apache.log4j.BasicConfigurator;
@@ -54,7 +55,7 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToTwitter());
         
         //Route11 statistic2Website with processor for PDF (process -> API)
-        //main.addRouteBuilder(new StatisticToWebsite());
+        main.addRouteBuilder(new StatisticToWebsite());
 
         //Route12 aggregateEmail (process -> outbound)
         //main.addRouteBuilder(new AggregateEmail());

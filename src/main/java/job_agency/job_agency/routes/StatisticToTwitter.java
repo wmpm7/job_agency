@@ -8,7 +8,7 @@ public class StatisticToTwitter extends RouteBuilder {
 	public void configure() throws Exception {
 		
 		
-		from("file://target/test?noop=true")
+		from("file://outbound/statistics?noop=true")
 		  .to("twitter://timeline/user?"
 		  		+ "consumerKey=cWUXPi2e5hbOUPJlWIziWMKuS"
 		  		+ "&consumerSecret=ySBERvxm26PZJA1usxT88qnfzUwxu8gwXy7nti8JyD9Qw353Lo"

@@ -107,6 +107,12 @@
 			<artifactId>camel-facebook</artifactId>
 		</dependency>
 
+		<!-- FOP for text2pdf -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-fop</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
