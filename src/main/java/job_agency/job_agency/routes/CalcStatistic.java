@@ -18,7 +18,7 @@ public class CalcStatistic extends RouteBuilder{
 		.log("All persons read from DB")
 		.beanRef("CalcStatisticBean","addToList")
 		.beanRef("CalcStatisticBean","calc")
-		.beanRef("CalcStatisticBean","makeUpperCase")
+		.beanRef("TransformationBean","makeUpperCase")
 		.log("statistic calculated")
 		.to("file://outbound/statistics")
 		.to("jms:EmailQueue");

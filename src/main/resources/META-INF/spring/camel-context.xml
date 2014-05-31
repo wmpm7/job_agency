@@ -28,6 +28,8 @@
 	
 	<bean id="CalcStatisticBean" class="job_agency.job_agency.beans.CalcStatisticBean" />
 	
+	<bean id="TransformationBean" class="job_agency.job_agency.beans.TransformationBean" />
+	
 	<bean id="Person" class="job_agency.job_agency.models.Person" />
 	
 	<bean id="Statistics" class="job_agency.job_agency.models.Statistics" />

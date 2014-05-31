@@ -159,9 +159,4 @@ public class CalcStatisticBean
 		j.setSalary((String) row.get("SALARY"));
 		return j;
 	}
-
-	public String makeUpperCase(String body) {
-		String transformedBody = body.toUpperCase();
-		return transformedBody;
-	}
 }
