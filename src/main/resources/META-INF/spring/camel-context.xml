@@ -9,10 +9,11 @@
          http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
 	<camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+		<propertyPlaceholder id="properties" location="myproperties.properties" />
 		<package>org.apache.camel.example.spring</package>
 	</camelContext>
-	
-	
+
+
 
 	<!-- lets configure the default ActiveMQ broker URL -->
 	<bean id="jms" class="org.apache.camel.component.jms.JmsComponent">
@@ -24,38 +25,42 @@
 		</property>
 	</bean>
 
+	<!-- Beans -->
 	<bean id="SomeBean" class="job_agency.job_agency.beans.SomeBean" />
-	
+
 	<bean id="CalcStatisticBean" class="job_agency.job_agency.beans.CalcStatisticBean" />
-	
+
 	<bean id="TransformationBean" class="job_agency.job_agency.beans.TransformationBean" />
-	
+
+	<!-- Beans ende -->
+
+	<!-- models -->
 	<bean id="Person" class="job_agency.job_agency.models.Person" />
-	
+
 	<bean id="Statistics" class="job_agency.job_agency.models.Statistics" />
-	
-		<!-- <bean id="AdvertManager" class="com.mycompany.manager.impl.AdvertManager" 
-			scope="singleton"> -->
+	<!-- models ende -->
 
-<!-- this is the JDBC data source which uses an in-memory only Apache Derby database --> 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> 
-		<property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver"/> 
-		<property name="url" value="jdbc:derby:memory:orders;create=true"/> 
-		<property name="username" value=""/> 
-		<property name="password" value=""/> 
+	<!-- this is the JDBC data source which uses an in-memory only Apache Derby 
+		database -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver" />
+		<property name="url" value="jdbc:derby:memory:orders;create=true" />
+		<property name="username" value="" />
+		<property name="password" value="" />
 	</bean>
-	
-	<!-- bean which creates/destroys the database table for this example --> 
-	
-	<bean id="initDatabase" class="job_agency.job_agency.beans.DatabaseBean" init-method="create" destroy-method="destroy"> 
-		<property name="dataSource" ref="dataSource"/> 
+
+	<!-- bean which creates/destroys the database table for this example -->
+
+	<bean id="initDatabase" class="job_agency.job_agency.beans.DatabaseBean"
+		init-method="create" destroy-method="destroy">
+		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
-	<!-- configure the Camel SQL component to use the JDBC data source --> 
+
+	<!-- configure the Camel SQL component to use the JDBC data source -->
 	<!-- <bean id="sql" class="org.apache.camel.component.sql.SqlComponent"> 
-		<property name="dataSource" ref="dataSource"/> 
-	</bean> -->
+		<property name="dataSource" ref="dataSource"/> </bean> -->
 
-	
+
 
 </beans>

@@ -6,12 +6,20 @@ public class StatisticToFacebook extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {
+//		from("file://src/data/test?noop=true")
+//		  .to("facebook://postStatusMessage?"
+//		  		+ "message=blub"
+//		  		+ "&oAuthAccessToken=CAADe3mZCA6xsBAHqTXCc66d4ZAqPy9apCSEAfziR7irRN6DHYuvyzu2BBVn2ZAc2krC5MlgtqINhxu6QjjMBkH1rNm6LYmfeKZAZCJDJKkZCqEm3oZAG8wG166b01AeemDWbcNHyCrjZBzyuJJ8cOojz3ZCxdXtuPF1CYZBEWYa7zT1lqCg7DJeCLBlas7aQlxWtcZD"
+//		  		+ "&oAuthAppId=245046939020059"
+//		  		+ "&oAuthAppSecret=fba916c9088b2776937f4715dd0e5b00");
+		
 		from("file://src/data/test?noop=true")
 		  .to("facebook://postStatusMessage?"
 		  		+ "message=blub"
-		  		+ "&oAuthAccessToken=CAADe3mZCA6xsBAHqTXCc66d4ZAqPy9apCSEAfziR7irRN6DHYuvyzu2BBVn2ZAc2krC5MlgtqINhxu6QjjMBkH1rNm6LYmfeKZAZCJDJKkZCqEm3oZAG8wG166b01AeemDWbcNHyCrjZBzyuJJ8cOojz3ZCxdXtuPF1CYZBEWYa7zT1lqCg7DJeCLBlas7aQlxWtcZD"
-		  		+ "&oAuthAppId=245046939020059"
-		  		+ "&oAuthAppSecret=fba916c9088b2776937f4715dd0e5b00");
+		  		+ "&oAuthAccessToken={{FBAuthAccessToken}}"
+		  		+ "&oAuthAppId={{FBAuthAppId}}"
+		  		+ "&oAuthAppSecret={{FBAuthAppSecret}}");
+		
 	}
 
 }
