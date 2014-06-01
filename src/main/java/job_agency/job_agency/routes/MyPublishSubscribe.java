@@ -12,7 +12,7 @@ public class MyPublishSubscribe extends RouteBuilder{
 		//from("file:src/data?noop=true")
 			//.multicast().to("file:target/messages/others");
 		
-		from("file:src/data?noop=true")
+		from("file://inbound/subscriber?noop=true")
 	    	.multicast().to("file:target/messages/uk", "file:target/messages/others");
 		
 	}
