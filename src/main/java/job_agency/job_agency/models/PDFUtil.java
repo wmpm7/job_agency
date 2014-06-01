@@ -27,8 +27,8 @@ public class PDFUtil {
 
 	public static String getFileNameWithoutExtension(Exchange exchange){
 		String fileName = (String) exchange.getIn().getHeader(Exchange.FILE_NAME);
-		//return fileName.substring(0, fileName.indexOf(EXT_DELIM));
-		return fileName;
+		return fileName.substring(0, fileName.indexOf(EXT_DELIM));
+		//return fileName;
 	}
 
 	public static String getFilledXSLFO(String content){

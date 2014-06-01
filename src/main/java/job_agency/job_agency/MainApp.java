@@ -62,7 +62,7 @@ public class MainApp {
         //main.addRouteBuilder(new AggregateEmail());
 
         //Route13 sendEmail 
-        main.addRouteBuilder(new sendEmail());
+        //main.addRouteBuilder(new sendEmail());
 
         //Route14 PublishSubscribe
         //main.addRouteBuilder(new MyPublishSubscribe());

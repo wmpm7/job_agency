@@ -9,7 +9,7 @@ public class StatisticToWebsite extends RouteBuilder {
 	public void configure() throws Exception {
 
 		
-		from("file://outbound/statistics?noop=true")
+		from("file://outbound/statistics?readLock=changed")
         .routeId("textToPdf")
         .process(new PDFProcessor())
         .to("fop:application/pdf")

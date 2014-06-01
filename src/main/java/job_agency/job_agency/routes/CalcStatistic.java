@@ -1,5 +1,6 @@
 package job_agency.job_agency.routes;
 
+import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 
 public class CalcStatistic extends RouteBuilder{
@@ -20,6 +21,7 @@ public class CalcStatistic extends RouteBuilder{
 		.beanRef("CalcStatisticBean","calc")
 		.beanRef("TransformationBean","makeUpperCase")
 		.log("statistic calculated")
+		.setHeader(Exchange.FILE_NAME, constant("statistic.txt"))
 		.to("file://outbound/statistics")
 		.to("jms:EmailQueue");
 
