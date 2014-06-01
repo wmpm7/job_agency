@@ -30,6 +30,14 @@ public class Address {
 		}
 		return false;
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Address [postalcode=" + postalcode + ", city=" + city
+				+ ", country=" + country + "]";
+	}
     
     
 }

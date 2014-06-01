@@ -8,6 +8,14 @@ public class Birthday {
 	
 	
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Birthday [day=" + day + ", month=" + month + ", year=" + year
+				+ "]";
+	}
 	/**
 	 * @return the age
 	 */

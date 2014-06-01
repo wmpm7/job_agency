@@ -2,7 +2,7 @@ package job_agency.job_agency.routes;
 
 import javax.xml.bind.JAXBContext;
 
-import job_agency.job_agency.beans.Questionnaire;
+import job_agency.job_agency.models.Questionnaire;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat; 

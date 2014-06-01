@@ -7,6 +7,7 @@ import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
 import job_agency.job_agency.routes.StatisticToWebsite;
+import job_agency.job_agency.routes.sendEmail;
 
 import org.apache.camel.spring.Main;
 import org.apache.log4j.BasicConfigurator;
@@ -61,7 +62,7 @@ public class MainApp {
         //main.addRouteBuilder(new AggregateEmail());
 
         //Route13 sendEmail 
-        //main.addRouteBuilder(new sendEmail());
+        main.addRouteBuilder(new sendEmail());
 
         //Route14 PublishSubscribe
         //main.addRouteBuilder(new MyPublishSubscribe());

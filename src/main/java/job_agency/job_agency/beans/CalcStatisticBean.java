@@ -41,7 +41,7 @@ public class CalcStatisticBean
 		this.jobs.clear();
 		this.persons.clear();
 		
-		LOG.debug("Body: " + arg0.toString());
+		LOG.info("Body: " + arg0.toString());
 		List<?> data = arg0.getIn().getBody(List.class);
 
 		for(int i =0; i<data.size();i++)
