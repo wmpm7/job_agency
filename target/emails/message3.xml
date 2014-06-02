@@ -2,8 +2,8 @@
 <questionnaire>
 	<person>
 	  <user>mary</user>
-	  <firstName>Mario</firstName>
-	  <lastName>Manninfffger</lastName>
+	  <firstName>Maria</firstName>
+	  <lastName>Manninger</lastName>
 	  <sex>f</sex>
 	  <birthday>
 	   	<day>29</day>
@@ -21,7 +21,7 @@
 	  	<mother></mother>
 	  	<father>Matura</father>
 	  </highesteducation>
-	  <email>kevin@winf.at</email>
+	  <email>blabla@mail.at</email>
 	</person>
 	<questions>
 		<what>
