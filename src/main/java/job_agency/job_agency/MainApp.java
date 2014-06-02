@@ -67,8 +67,8 @@ public class MainApp {
         //main.addRouteBuilder(new sendEmail());
 
         //Route14 PublishSubscribe
-        main.addRouteBuilder(new MailinglistToQueue());
-        main.addRouteBuilder(new MyPublishSubscribe());
+        //main.addRouteBuilder(new MailinglistToQueue());
+        //main.addRouteBuilder(new MyPublishSubscribe());
         
         //Route15 file2Queue [job offer]
         main.addRouteBuilder(new JobofferToQueueRoute());
