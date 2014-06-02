@@ -6,11 +6,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Questionnaire {
 	public Person person;
 	public Questions questions;
-	
-	public boolean isAut(){
-		if(this.person.getAddress().getCountry().equals("AUT")){
-			return true;
-		}
-		return false;
-	}
+
 }

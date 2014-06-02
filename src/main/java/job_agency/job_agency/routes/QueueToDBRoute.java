@@ -9,9 +9,8 @@ public class QueueToDBRoute extends RouteBuilder{
 	@Override
 	public void configure() throws Exception {
 		from("jms:FilteredInsertQueue")
-			.to("jms:emailQueue") //zum testen des email senden
+			.to("jms:emailQueue") //zum testen des email senden, da E-Mail content noch fehlt
 			.process(new InsertProcessor())
-		//.to("jms:awef");
 			.to("jdbc:dataSource");
 	}
 

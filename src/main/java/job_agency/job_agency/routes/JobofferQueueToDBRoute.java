@@ -10,7 +10,6 @@ public class JobofferQueueToDBRoute extends RouteBuilder{
 	public void configure() throws Exception {
 		from("jms:JobofferQueue")
 		.process(new InsertJobofferProcessor())
-	//.to("jms:awef");
 		.to("jdbc:dataSource")
 		.log("Joboffer added to Derby DB");
 		

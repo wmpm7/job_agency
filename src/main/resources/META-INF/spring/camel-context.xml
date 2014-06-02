@@ -26,8 +26,6 @@
 	</bean>
 
 	<!-- Beans -->
-	<bean id="SomeBean" class="job_agency.job_agency.beans.SomeBean" />
-
 	<bean id="CalcStatisticBean" class="job_agency.job_agency.beans.CalcStatisticBean" />
 	
 	<bean id="GraphicCreatorBean" class="job_agency.job_agency.beans.GraphicCreatorBean" />

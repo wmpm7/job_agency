@@ -4,6 +4,7 @@ import job_agency.job_agency.models.Questionnaire;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
+import org.jfree.util.Log;
 
 public class InsertProcessor implements Processor {
 
@@ -50,7 +51,7 @@ public class InsertProcessor implements Processor {
 				+ qu.person.getHighesteducation().getFather() + "','" 
 				+ qu.person.getEmail() + "')";
 		
-		System.out.println("***************Questionnaire:   " + sqlstmt);
+		Log.info("Questionnaire:   " + sqlstmt);
 		
 		arg0.getIn().setBody(sqlstmt);
 		
