@@ -21,7 +21,7 @@ public class SubscribeProcess implements Processor{
 
 	    String list = "";
 	    String email;
-	    String endpoint = "smtp://wmpm.group7@smtp.gmail.com:25?password={{emailPassword}}&username={{emailUsername}}"
+	    String endpoint = "smtps://wmpm.group7@smtp.gmail.com:25?password={{emailPassword}}&username={{emailUsername}}"
 	    		+ "&mail.smtp.starttls.enable=true&to=";
 	    
 	    
