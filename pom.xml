@@ -107,6 +107,20 @@
 			<artifactId>camel-facebook</artifactId>
 		</dependency>
 
+		<!-- FOP for text2pdf -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-fop</artifactId>
+		</dependency>
+		
+		<!-- JFreeChart -->
+
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.17</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -2,7 +2,7 @@ package job_agency.job_agency.routes;
 
 import javax.xml.bind.JAXBContext;
 
-import job_agency.job_agency.beans.Questionnaire;
+import job_agency.job_agency.models.Questionnaire;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat; 
@@ -22,7 +22,7 @@ public class FileToQueueRoute extends RouteBuilder{
 		
 		
 		
-		from("file:src/data?noop=true")
+		from("file://inbound/questionnaires?noop=true")
 		.log("start content-based rounting for incoming XML and JSON files")
 		.choice()
 			.when().simple("${file:name.ext} == 'json'").

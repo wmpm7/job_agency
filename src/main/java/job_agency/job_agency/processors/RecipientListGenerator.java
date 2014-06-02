@@ -15,7 +15,8 @@ public class RecipientListGenerator implements Processor{
 		String recList = "";
 		for (Object s:data){
 			m = (Map) s;
-			recList = recList + "smtp://wmpm.group7@smtp.gmail.com:25?password=blubb123&username=wmpm.group7&mail.smtp.starttls.enable=true&to=";
+			recList = recList + "smtp://wmpm.group7@smtp.gmail.com:25?password={{emailPassword}}&username={{emailUsername}}"
+	    		+ "&mail.smtp.starttls.enable=true&to=";
 			recList = recList + m.get("EMAIL") + "|";
 		}
 		recList = recList.substring(0, recList.length()-1);

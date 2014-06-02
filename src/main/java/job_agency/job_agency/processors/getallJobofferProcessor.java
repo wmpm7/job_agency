@@ -1,27 +1,26 @@
 package job_agency.job_agency.processors;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import job_agency.job_agency.models.Address;
+import job_agency.job_agency.models.Joboffer;
+
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
-
-import job_agency.job_agency.beans.Address;
-import job_agency.job_agency.beans.Joboffer;
 
 public class getallJobofferProcessor implements Processor{
 
 	@Override
 	public void process(Exchange arg0) throws Exception {
 		
-		List data = arg0.getIn().getBody(List.class);
+		List<?> data = arg0.getIn().getBody(List.class);
 		ArrayList<Joboffer> al =new ArrayList<Joboffer>();
 		
 		for(int i =0; i<data.size();i++)
 		{
-			Map row = (Map)data.get(i);
+			Map<?, ?> row = (Map<?, ?>)data.get(i);
 			Joboffer j = new Joboffer();
 			Address a = new Address();
 			a.setCity((String) row.get("CITY"));

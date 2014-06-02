@@ -1,15 +1,17 @@
 package job_agency.job_agency;
 
-
-import job_agency.job_agency.routes.AggregateEmail;
 import job_agency.job_agency.routes.CalcStatistic;
 import job_agency.job_agency.routes.FileToQueueRoute;
 import job_agency.job_agency.routes.FilterQueueRoute;
+import job_agency.job_agency.routes.GraphicCreator;
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.MyRouteBuilder;
+import job_agency.job_agency.routes.MailinglistToQueue;
+import job_agency.job_agency.routes.MyPublishSubscribe;
 import job_agency.job_agency.routes.QueueToDBRoute;
-import job_agency.job_agency.routes.StatisticToFacebook;
+import job_agency.job_agency.routes.StatisticToWebsite;
+import job_agency.job_agency.routes.sendEmail;
 
 import org.apache.camel.spring.Main;
 import org.apache.log4j.BasicConfigurator;
@@ -22,7 +24,11 @@ public class MainApp {
         
         BasicConfigurator.configure();
         
-        main.addRouteBuilder(new MyRouteBuilder());
+        
+        //PUBLISH SUBSCRIBE TEST CHRISI
+        //main.addRouteBuilder(new MyRouteBuilder());
+        
+        
         //main.addRouteBuilder(new MyPublishSubscribe());
         //main.addRouteBuilder(new MyMessageFilter());
         
@@ -48,6 +54,8 @@ public class MainApp {
         //Route7 calcStatistic 
         main.addRouteBuilder(new CalcStatistic());
         
+        main.addRouteBuilder(new GraphicCreator());
+        
         //Route8 statistic2Email 
         //main.addRouteBuilder(new StatisticToEmail());
         
@@ -58,7 +66,7 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToTwitter());
         
         //Route11 statistic2Website with processor for PDF (process -> API)
-        //main.addRouteBuilder(new StatisticToWebsite());
+        main.addRouteBuilder(new StatisticToWebsite());
 
         //Route12 aggregateEmail (process -> outbound)
         //main.addRouteBuilder(new AggregateEmail());
@@ -66,8 +74,9 @@ public class MainApp {
         //Route13 sendEmail 
         //main.addRouteBuilder(new sendEmail());
 
-        //Route14 PublishSubscribe
-        //main.addRouteBuilder(new MyPublishSubscribe());
+        //Route14 PublishSubscribe --> NEWSLETTER
+        //main.addRouteBuilder(new MailinglistToQueue());
+        main.addRouteBuilder(new MyPublishSubscribe());
         
         //Route15 file2Queue [job offer]
         main.addRouteBuilder(new JobofferToQueueRoute());

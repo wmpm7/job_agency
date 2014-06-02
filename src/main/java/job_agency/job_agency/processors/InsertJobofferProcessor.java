@@ -1,6 +1,6 @@
 package job_agency.job_agency.processors;
 
-import job_agency.job_agency.beans.Joboffer;
+import job_agency.job_agency.models.Joboffer;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

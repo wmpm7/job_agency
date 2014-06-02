@@ -4,56 +4,45 @@ import job_agency.job_agency.processors.RecipientListGenerator;
 import job_agency.job_agency.processors.getallJobofferProcessor;
 import job_agency.job_agency.processors.getallPersonProcessor;
 
+import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 
 public class CalcStatistic extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {	
-		
+
 		//PERIOD = 60000 --> every minute
+
+		//calculates the statistic only with personal data
+		// => joboffers currently not needed
+		//in case adjust sql-statement or second block with joboffers
 		
-		//berechnet anzahl der Joboffers
-		//würde auch leichter gehen mit einem count habs aber so gemacht damit man sieht wie man
-		//die daten in eine arrayliste haut
-		from("timer://foo?period=60000")
-		.setBody(constant("select * from Joboffer"))
-		.to("jdbc:dataSource")
-		.log("alle Joboffers werden ausgelesen")
-		.process(new getallJobofferProcessor())
-		.to("jms:EmailQueue");
-		
-		//nur da damit man sieht wie man alle persons in eine Arraylist bekommt
-		from("timer://foo?period=60000")
+		from("timer://foo?period=30000")
 		.setBody(constant("select * from Person"))
 		.to("jdbc:dataSource")
-		.log("alle Persons werden ausgelesen")
-		.process(new getallPersonProcessor())
+		.log("All persons read from DB")
+		.beanRef("CalcStatisticBean","addToList")
+		.beanRef("CalcStatisticBean","calc")
+		.beanRef("TransformationBean","makeUpperCase")
+		.log("statistic calculated")
+		.setHeader(Exchange.FILE_NAME, constant("statistic.txt"))
+		.to("file://outbound/statistics")
 		.to("jms:EmailQueue");
+
 		
 		
-		from("timer://foo?period=60000")
-		.setBody(constant("select count(*) from Person where sex ='m'"))
-		.to("jdbc:dataSource")
-		.log("Anzahl männlicher Personen wird ausgelesen")
-		.to("jms:EmailQueue");
-		
-		from("timer://foo?period=60000")
-		.setBody(constant("select count(*) from Person where sex ='w'"))
-		.to("jdbc:dataSource")
-		.log("Anzahl weiblicher Personen wird ausgelesen")
-		.to("jms:EmailQueue");
-		
+		//CHRISI PUBLISH SUBSCRIBE TEST
 		
 		//NEWSLETTER
 		
 		//read email addresses from DB
 		//send mails
-		from("timer://foo?period=60000")
-		//.setBody(constant("select email from person where newsletter=true union select email from joboffer where newsletter=true"))
-		.setBody(constant("select email from person union select email from joboffer"))
-		.to("jdbc:dataSource")
-		.process(new RecipientListGenerator()).recipientList().tokenize("|");
+			//from("timer://foo?period=60000")
+			//.setBody(constant("select email from person where newsletter=true union select email from joboffer where newsletter=true"))
+			//.setBody(constant("select email from person union select email from joboffer"))
+			//.to("jdbc:dataSource")
+			//.process(new RecipientListGenerator()).recipientList().tokenize("|");
 		
 		
 		//gmail-account
@@ -65,8 +54,33 @@ public class CalcStatistic extends RouteBuilder{
 		
 		
 		//from("direct:a").recipientList(header("myHeader").tokenize(","));
-		
-		
+
+
+
+//		from("timer://foo?period=30000")
+//		.setBody(constant("select * from Joboffer"))
+//		.to("jdbc:dataSource")
+//		.log("alle Joboffers werden ausgelesen")
+//		//.process(new getallJobofferProcessor())
+//		.beanRef("CalcStatisticBean","addToList")
+//		.beanRef("CalcStatisticBean","calc")
+//		.beanRef("CalcStatisticBean","makeUpperCase")
+//		//.to("jms:EmailQueue");
+//		.to("file://outbound/statJob");
+
+//		from("timer://foo?period=60000")
+//		.setBody(constant("select count(*) from Person where sex ='m'"))
+//		.to("jdbc:dataSource")
+//		.log("Anzahl männlicher Personen wird ausgelesen")
+//		.to("jms:EmailQueue");
+//
+//		from("timer://foo?period=60000")
+//		.setBody(constant("select count(*) from Person where sex ='w'"))
+//		.to("jdbc:dataSource")
+//		.log("Anzahl weiblicher Personen wird ausgelesen")
+//		.to("jms:EmailQueue");
+
+
 	}
 
 }
