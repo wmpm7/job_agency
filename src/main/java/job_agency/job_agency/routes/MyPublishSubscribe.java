@@ -1,21 +1,23 @@
 package job_agency.job_agency.routes;
 
+
+import job_agency.job_agency.processors.SubscribeProcess;
+
 import org.apache.camel.builder.RouteBuilder;
 
 public class MyPublishSubscribe extends RouteBuilder{
-	
+
 	public void configure(){
-	
-		/**
-		 * PUBLISH SUBSCRIBE HELLO WORLD
-		 */
-		//from("file:src/data?noop=true")
-			//.multicast().to("file:target/messages/others");
-		
-		from("file://inbound/subscriber?noop=true")
-	    	.multicast().to("file:target/messages/uk", "file:target/messages/others");
-		
+
+		//from("file://inbound/subscriber?noop=true&delay=15000")
+		from("timer://foo2?period=90000")
+		.log("send newsletter")
+		.pollEnrich("jms:emailBuffer") //?noop=true&idempotentKey=${file:name}-${file:modified}")
+		.to("jms:emailBuffer")
+		.process(new SubscribeProcess())
+		.multicast()
+		.recipientList(header("recipients"));
 	}
-	
+
 
 }

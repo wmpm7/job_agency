@@ -31,7 +31,7 @@
 	<bean id="CalcStatisticBean" class="job_agency.job_agency.beans.CalcStatisticBean" />
 
 	<bean id="TransformationBean" class="job_agency.job_agency.beans.TransformationBean" />
-
+	
 	<!-- Beans ende -->
 
 	<!-- models -->

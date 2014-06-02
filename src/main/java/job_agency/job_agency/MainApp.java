@@ -5,6 +5,8 @@ import job_agency.job_agency.routes.FileToQueueRoute;
 import job_agency.job_agency.routes.FilterQueueRoute;
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
+import job_agency.job_agency.routes.MailinglistToQueue;
+import job_agency.job_agency.routes.MyPublishSubscribe;
 import job_agency.job_agency.routes.QueueToDBRoute;
 import job_agency.job_agency.routes.StatisticToWebsite;
 import job_agency.job_agency.routes.sendEmail;
@@ -65,7 +67,8 @@ public class MainApp {
         //main.addRouteBuilder(new sendEmail());
 
         //Route14 PublishSubscribe
-        //main.addRouteBuilder(new MyPublishSubscribe());
+        main.addRouteBuilder(new MailinglistToQueue());
+        main.addRouteBuilder(new MyPublishSubscribe());
         
         //Route15 file2Queue [job offer]
         main.addRouteBuilder(new JobofferToQueueRoute());

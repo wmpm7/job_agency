@@ -11,7 +11,6 @@ public class StatisticToWebsite extends RouteBuilder {
 		
 		from("file://outbound/statistics?noop=true&idempotentKey=${file:name}-${file:modified}")
         .routeId("textToPdf")
-        //.to("file://outbound/statistics/txt")
         .process(new PDFProcessor())
         .to("fop:application/pdf")
         .to("file://outbound/statistics/pdf");

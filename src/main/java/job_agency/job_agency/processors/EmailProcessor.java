@@ -24,7 +24,6 @@ public class EmailProcessor implements Processor{
 	    
 	    exchange.getIn().setHeader("subject", "Result job questionnaire");
 	    
-	    //extract email from exchange
 	    exchange.getIn().setHeader("recipient",
 	    		"smtp://wmpm.group7@smtp.gmail.com:25?password={{emailPassword}}&username={{emailUsername}}"
 	    		+ "&mail.smtp.starttls.enable=true"
