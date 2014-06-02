@@ -1,11 +1,13 @@
 package job_agency.job_agency;
 
 
+import job_agency.job_agency.routes.AggregateEmail;
+import job_agency.job_agency.routes.CalcStatistic;
 import job_agency.job_agency.routes.FileToQueueRoute;
 import job_agency.job_agency.routes.FilterQueueRoute;
-
 import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
+import job_agency.job_agency.routes.MyRouteBuilder;
 import job_agency.job_agency.routes.QueueToDBRoute;
 import job_agency.job_agency.routes.StatisticToFacebook;
 
@@ -20,7 +22,7 @@ public class MainApp {
         
         BasicConfigurator.configure();
         
-        //main.addRouteBuilder(new MyRouteBuilder());
+        main.addRouteBuilder(new MyRouteBuilder());
         //main.addRouteBuilder(new MyPublishSubscribe());
         //main.addRouteBuilder(new MyMessageFilter());
         
@@ -44,7 +46,7 @@ public class MainApp {
         //main.addRouteBuilder(new SearchJobExtern());
         
         //Route7 calcStatistic 
-        //main.addRouteBuilder(new calcStatistic());
+        main.addRouteBuilder(new CalcStatistic());
         
         //Route8 statistic2Email 
         //main.addRouteBuilder(new StatisticToEmail());
@@ -72,6 +74,8 @@ public class MainApp {
         
         //Route16 save2DB (queue -> DB) [job offer]
         main.addRouteBuilder(new JobofferQueueToDBRoute());
+        
+
         
         main.run(args);
     }
