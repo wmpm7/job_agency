@@ -10,10 +10,11 @@ public class StatisticToWebsite extends RouteBuilder {
 
 		
 		from("file://outbound/statistics?noop=true&idempotentKey=${file:name}-${file:modified}")
-        .routeId("textToPdf")
+        .routeId("TextToPdf-Route")
         .process(new PDFProcessor())
         .to("fop:application/pdf")
-        .to("file://outbound/statistics/pdf");
+        .to("file://outbound/statistics/pdf")
+        .log("PDF file created and stored in outbound/statistics/pdf");
 	}
 
 }

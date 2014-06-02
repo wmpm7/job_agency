@@ -20,9 +20,10 @@ public class JobofferToQueueRoute extends RouteBuilder{
 		
 		
 		from("file:inbound/joboffers?noop=true")
+		.routeId("JobofferToQueue-Route")
 			.unmarshal(df)
 			.to("jms:JobofferQueue")
-			.log("JobofferQueue:new Joboffer added!");
+			.log("JobofferQueue:new Joboffer added from inbound/joboffers");
 		
 	}
 

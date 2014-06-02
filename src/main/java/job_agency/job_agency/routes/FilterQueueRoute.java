@@ -12,9 +12,10 @@ public class FilterQueueRoute extends RouteBuilder{
 		CountryFilter cf = new CountryFilter();
 		
 		from("jms:PojoInsertQueue")
+		.routeId("FilterQueue-Route")
 			.filter().method(cf)
 		.to("jms:FilteredInsertQueue")
-			.log("Person filtered and added to FilteredInsertQueue!");
+			.log("People which are from Austria filtered and added to FilteredInsertQueue!");
 		
 	}
 

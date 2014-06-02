@@ -14,6 +14,7 @@ public class StatisticToFacebook extends RouteBuilder{
 //		  		+ "&oAuthAppSecret=fba916c9088b2776937f4715dd0e5b00");
 		
 		from("file://src/data/test?noop=true")
+		.routeId("StatisticToFacebook-Route")
 		  .to("facebook://postStatusMessage?"
 		  		+ "message=blub"
 		  		+ "&oAuthAccessToken={{FBAuthAccessToken}}"

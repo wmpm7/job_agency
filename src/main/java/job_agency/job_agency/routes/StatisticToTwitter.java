@@ -9,6 +9,7 @@ public class StatisticToTwitter extends RouteBuilder {
 		
 		
 		from("file://outbound/statistics?noop=true")
+		.routeId("StatisticToTwitter-Route")
 		  .to("twitter://timeline/user?"
 		  		+ "consumerKey={{TconsumerKey}}"
 		  		+ "&consumerSecret={{TconsumerSecret}}"

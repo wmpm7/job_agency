@@ -33,7 +33,7 @@ public class GraphicCreatorBean {
 		JFreeChart chart = ChartFactory.createPieChart3D("FemaleMaleComparison", dataset, true, true, false);
 		 
 		/* Save the chart on the hard drive. */
-		ChartUtilities.saveChartAsJPEG(new File("outbound/statistics/graphics/posts-3d-pie.jpg"), chart, 500, 280);
+		ChartUtilities.saveChartAsJPEG(new File("outbound/statistics/graphics/FemaleMalePieChart.jpg"), chart, 500, 280);
 		
 	}
 	
