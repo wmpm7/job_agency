@@ -10,22 +10,22 @@ public class InsertJobofferProcessor implements Processor  {
 	@Override
 	public void process(Exchange arg0) throws Exception {
 		 Joboffer offer = arg0.getIn().getBody(Joboffer.class);
-		 String sqlstmt = "";
+		 StringBuilder sqlstmt;
 		 
-		 sqlstmt = "insert into Joboffer " + 
-					"(title,postalcode,city,country,phone,email,jobdescription,salary) " + 
-					"values ('"
-					+ offer.getTitle() + "','"
-					+ offer.getAddress().getPostalcode() + "','"
-					+ offer.getAddress().getCity() + "','"
-					+ offer.getAddress().getCountry() + "','"
-					+ offer.getPhone() + "','"
-					+ offer.getEmail() + "','"
-					+ offer.getJobdescription() + "','"
-					+ offer.getSalary()
-					+ "')";
+		 sqlstmt = new StringBuilder("insert into Joboffer ");
+		 sqlstmt.append("(title,postalcode,city,country,phone,email,jobdescription,salary) ");
+		 sqlstmt.append("values ('");
+		 sqlstmt.append(offer.getTitle()).append("','");
+		 sqlstmt.append(offer.getAddress().getPostalcode()).append("','");
+		 sqlstmt.append(offer.getAddress().getCity()).append("','");
+		 sqlstmt.append(offer.getAddress().getCountry()).append("','");
+		 sqlstmt.append(offer.getPhone()).append("','");
+		 sqlstmt.append(offer.getEmail()).append("','");
+		 sqlstmt.append(offer.getJobdescription()).append("','");
+		 sqlstmt.append(offer.getSalary());
+		 sqlstmt.append("')");
 		 
-		 arg0.getIn().setBody(sqlstmt);
+		 arg0.getIn().setBody(sqlstmt.toString());
 	}
 
 }

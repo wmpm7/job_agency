@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Mon Jun 02 16:28:31 CEST 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-5cfb-4c54-000004103500 
-on database directory memory:/Users/Chrisi/Documents/Studium/Workflow and process management/job_agency/orders with class loader sun.misc.Launcher$AppClassLoader@5ab8df17 
+Mon Jun 09 23:15:04 CEST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-827c-04b7-0000040ed570 
+on database directory memory:/Users/Chrisi/Documents/Studium/Workflow and process management/job_agency/orders with class loader sun.misc.Launcher$AppClassLoader@558fe7c3 
 Loaded from file:/Users/Chrisi/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Apple Inc.
 java.runtime.version=1.6.0_65-b14-462-11M4609
