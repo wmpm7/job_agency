@@ -25,6 +25,7 @@ public class CalcStatistic extends RouteBuilder{
 		.log("Statistics calculated and can be found in folder outbound/statistics!")
 		.setHeader(Exchange.FILE_NAME, constant("statistic.txt"))
 		.to("file://outbound/statistics")
+		.to("jms:graphicQueue")
 		.to("jms:EmailQueue");
 
 //		from("timer://foo?period=60000")
