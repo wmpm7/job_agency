@@ -9,6 +9,7 @@ import job_agency.job_agency.routes.JobofferQueueToDBRoute;
 import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.NewsletterRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
+import job_agency.job_agency.routes.SearchJobExtern;
 import job_agency.job_agency.routes.StatisticToWebsite;
 
 import org.apache.camel.spring.Main;
@@ -38,6 +39,9 @@ public class MainApp {
         //main.addRouteBuilder(new SearchJobIntern());
         
         //Route6 searchJobExtern (API -> process)
+        //Derzeit wird ein statischer String bei Karriere abgefragt. 
+        //Erhaltene Jobangebote werden gesplittet und neu formatiert
+        //Aggregator fehlt noch
         //main.addRouteBuilder(new SearchJobExtern());
         
         //Route7 calcStatistic 
@@ -60,6 +64,7 @@ public class MainApp {
 
         //Route13 sendEmail 
         //main.addRouteBuilder(new EmailToCustomerRoute());
+
 
         
         //NEWSLETTER

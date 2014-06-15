@@ -32,6 +32,8 @@
 
 	<bean id="TransformationBean" class="job_agency.job_agency.beans.TransformationBean" />
 	
+	<bean id="JobExternBean" class="job_agency.job_agency.beans.JobExternBean" />
+		
 	<!-- Beans ende -->
 
 	<!-- models -->
