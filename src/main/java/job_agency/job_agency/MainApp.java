@@ -53,29 +53,29 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToTwitter());
         
         //Route11 statistic2Website with processor for PDF (process -> API)
-        main.addRouteBuilder(new StatisticToWebsite());
+        //main.addRouteBuilder(new StatisticToWebsite());
 
         //Route12 aggregateEmail (process -> outbound)
         //main.addRouteBuilder(new AggregateEmail());
 
         //Route13 sendEmail 
-        main.addRouteBuilder(new EmailToCustomerRoute());
+        //main.addRouteBuilder(new EmailToCustomerRoute());
 
         
         //NEWSLETTER
         
         //Route14 PublishSubscribe
-        main.addRouteBuilder(new NewsletterRoute());
+        //main.addRouteBuilder(new NewsletterRoute());
         
         
         //JOBOFFERS INTO INTERN DATABASE
         
         
         //Route15 file2Queue [job offer]
-        main.addRouteBuilder(new JobofferToQueueRoute());
+        //main.addRouteBuilder(new JobofferToQueueRoute());
         
         //Route16 save2DB (queue -> DB) [job offer]
-        main.addRouteBuilder(new JobofferQueueToDBRoute());
+        //main.addRouteBuilder(new JobofferQueueToDBRoute());
         
 
         

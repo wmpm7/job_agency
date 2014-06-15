@@ -9,7 +9,7 @@ public class AggregateEmail extends RouteBuilder{
 	
 	public void configure() throws Exception {
 		
-
+		
 		
 	}
 
