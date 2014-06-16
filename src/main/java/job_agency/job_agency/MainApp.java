@@ -1,5 +1,6 @@
 package job_agency.job_agency;
 
+import job_agency.job_agency.routes.AggregateEmail;
 import job_agency.job_agency.routes.CalcStatistic;
 import job_agency.job_agency.routes.EmailToCustomerRoute;
 import job_agency.job_agency.routes.FileToQueueRoute;
@@ -24,13 +25,13 @@ public class MainApp {
         BasicConfigurator.configure();        
         
         //Route1 file2Queue [questionnaire]
-        main.addRouteBuilder(new FileToQueueRoute());
+        //main.addRouteBuilder(new FileToQueueRoute());
         
         //Route2 Filter useless 
-        main.addRouteBuilder(new FilterQueueRoute());
+        //main.addRouteBuilder(new FilterQueueRoute());
 
         //Route3 save2DB (queue -> DB)  [questionnaire]
-        main.addRouteBuilder(new QueueToDBRoute());
+        //main.addRouteBuilder(new QueueToDBRoute());
         
         //Route4 calcInterests 
         //main.addRouteBuilder(new calcInterests());
@@ -42,13 +43,13 @@ public class MainApp {
         //Derzeit wird ein statischer String bei Karriere abgefragt. 
         //Erhaltene Jobangebote werden gesplittet und neu formatiert
         //Aggregator fehlt noch
-        //main.addRouteBuilder(new SearchJobExtern());
+        main.addRouteBuilder(new SearchJobExtern());
         
         //Route7 calcStatistic 
-        main.addRouteBuilder(new CalcStatistic());
+        //main.addRouteBuilder(new CalcStatistic());
         
         //Route8 createGraphics
-        main.addRouteBuilder(new GraphicCreator());
+        //main.addRouteBuilder(new GraphicCreator());
         
         //Route9 statistic2FB (process -> API)
         //main.addRouteBuilder(new StatisticToFacebook());
@@ -60,7 +61,7 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToWebsite());
 
         //Route12 aggregateEmail (process -> outbound)
-        //main.addRouteBuilder(new AggregateEmail());
+        main.addRouteBuilder(new AggregateEmail());
 
         //Route13 sendEmail 
         //main.addRouteBuilder(new EmailToCustomerRoute());

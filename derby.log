@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 ----------------------------------------------------------------
-Wed Jun 11 13:20:38 CEST 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-8aa8-85a1-000005ef22d8 
-on database directory memory:C:\Users\Dominik\Documents\UNI\8. Semester\Workflow Modeling and Process Management\Project\job_agency\orders with class loader sun.misc.Launcher$AppClassLoader@3d9713ea 
+Mon Jun 16 22:46:44 CEST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-a66e-9768-000005dbc0e0 
+on database directory memory:C:\Users\Dominik\Documents\UNI\8. Semester\Workflow Modeling and Process Management\Project\job_agency\orders with class loader sun.misc.Launcher$AppClassLoader@17e1225d 
 Loaded from file:/C:/Users/Dominik/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.7.0_45-b18
@@ -10,6 +9,5 @@ user.dir=C:\Users\Dominik\Documents\UNI\8. Semester\Workflow Modeling and Proces
 os.name=Windows 7
 os.arch=amd64
 os.version=6.1
-
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

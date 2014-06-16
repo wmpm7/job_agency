@@ -3,6 +3,7 @@ package job_agency.job_agency.beans;
 public class JobExternBean {
 	
 	public String reformat(String body){
+		
 		String[] title = body.split("title\":\"");
 		int titleEndIndex = title[1].indexOf("\"");
 		String joboffer = "Titel: " + title[1].substring(0, titleEndIndex).replaceAll("\\\\","");
