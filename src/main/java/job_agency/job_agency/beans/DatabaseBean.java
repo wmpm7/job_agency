@@ -54,7 +54,9 @@ public class DatabaseBean {
               + "  educationself varchar(30),\n"
               + "  educationmother varchar(30),\n"
               + "  educationfather varchar(30),\n"
-              + "  email varchar(30)\n"
+              + "  email varchar(30),\n"
+              + "  location varchar(30),\n"
+              + "  interest varchar(30)\n" 
               + ")";
         
         String sqljoboffer = "create table joboffer (\n"
@@ -68,9 +70,15 @@ public class DatabaseBean {
               + "  jobdescription varchar(300),\n"
               + "  salary varchar(30)\n"
               + ")";
+        
+
+        
+
 
 
         LOG.info("Creating table Person ...");
+        LOG.info("Creating table Joboffer ...");
+        
 
         try {
             jdbc.execute("drop table person");
@@ -81,6 +89,7 @@ public class DatabaseBean {
 
         jdbc.execute(sqlperson);
         jdbc.execute(sqljoboffer);
+
 
         LOG.info("... created table person");
         LOG.info("... created table joboffer");

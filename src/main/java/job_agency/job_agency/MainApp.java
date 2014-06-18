@@ -25,13 +25,13 @@ public class MainApp {
         BasicConfigurator.configure();        
         
         //Route1 file2Queue [questionnaire]
-        //main.addRouteBuilder(new FileToQueueRoute());
+        main.addRouteBuilder(new FileToQueueRoute());
         
         //Route2 Filter useless 
-        //main.addRouteBuilder(new FilterQueueRoute());
+        main.addRouteBuilder(new FilterQueueRoute());
 
         //Route3 save2DB (queue -> DB)  [questionnaire]
-        //main.addRouteBuilder(new QueueToDBRoute());
+        main.addRouteBuilder(new QueueToDBRoute());
         
         //Route4 calcInterests 
         //main.addRouteBuilder(new calcInterests());

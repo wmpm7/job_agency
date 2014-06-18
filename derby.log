@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Mon Jun 16 22:46:44 CEST 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-a66e-9768-000005dbc0e0 
-on database directory memory:C:\Users\Dominik\Documents\UNI\8. Semester\Workflow Modeling and Process Management\Project\job_agency\orders with class loader sun.misc.Launcher$AppClassLoader@17e1225d 
-Loaded from file:/C:/Users/Dominik/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_45-b18
-user.dir=C:\Users\Dominik\Documents\UNI\8. Semester\Workflow Modeling and Process Management\Project\job_agency
-os.name=Windows 7
-os.arch=amd64
-os.version=6.1
+Wed Jun 18 13:21:42 CEST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-aeb6-034f-0000042837b0 
+on database directory memory:/Users/Roscoe/Documents/workspace/job_agency/orders with class loader sun.misc.Launcher$AppClassLoader@558fe7c3 
+Loaded from file:/Users/Roscoe/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
+java.vendor=Apple Inc.
+java.runtime.version=1.6.0_65-b14-462-11M4609
+user.dir=/Users/Roscoe/Documents/workspace/job_agency
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.9.2
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

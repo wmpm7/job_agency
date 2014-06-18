@@ -22,27 +22,8 @@
 	  	<father>Matura</father>
 	  </highesteducation>
 	  <email>cbartmann@gmx.at</email>
+	  <location>Linz</location>
+	  <interest>java</interest>
+	  
 	</person>
-	<questions>
-		<what>
-		</what>
-		<where>
-		</where>
-		<with>
-		</with>
-	</questions>
 </questionnaire>
-<!--  
-<?xml version="1.0" encoding="UTF-8"?>
-<person user="james">
-	<firstName>James</firstName>
-	<lastName>Strachan</lastName>
-	<city>London</city>
-</person>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<person user="hiram">
-	<firstName>Hiram</firstName>
-	<lastName>Chirino</lastName>
-	<city>Tampa</city>
-</person> -->
