@@ -11,6 +11,9 @@ public class Person{
     private Address address;
     private Education highesteducation;
     private String email;
+	private String location;
+    private String interest;
+    
     
 
     public String getUser() {
@@ -76,16 +79,34 @@ public class Person{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+    
+    
+    public String getLocation() {
+		return location;
+	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+	public String getInterest() {
+		return interest;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public void setInterest(String interest) {
+		this.interest = interest;
+	}
+	
+	
+
 	@Override
 	public String toString() {
 		return "Person [user=" + user + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", sex=" + sex + ", birthday="
 				+ birthday + ", address=" + address + ", highesteducation="
-				+ highesteducation + ", email=" + email + "]";
+				+ highesteducation + ", email=" + email + ", location="
+				+ location + ", interest=" + interest + "]";
 	}
 
 	
