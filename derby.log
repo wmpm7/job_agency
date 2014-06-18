@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Wed Jun 18 13:21:42 CEST 2014:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-aeb6-034f-0000042837b0 
+Wed Jun 18 15:04:13 CEST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-af13-dc88-00000426b160 
 on database directory memory:/Users/Roscoe/Documents/workspace/job_agency/orders with class loader sun.misc.Launcher$AppClassLoader@558fe7c3 
 Loaded from file:/Users/Roscoe/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Apple Inc.

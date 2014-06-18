@@ -11,6 +11,7 @@ import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.NewsletterRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
 import job_agency.job_agency.routes.SearchJobExtern;
+import job_agency.job_agency.routes.StatisticToFacebook;
 import job_agency.job_agency.routes.StatisticToWebsite;
 
 import org.apache.camel.spring.Main;
@@ -46,13 +47,13 @@ public class MainApp {
         main.addRouteBuilder(new SearchJobExtern());
         
         //Route7 calcStatistic 
-        //main.addRouteBuilder(new CalcStatistic());
+        main.addRouteBuilder(new CalcStatistic());
         
         //Route8 createGraphics
-        //main.addRouteBuilder(new GraphicCreator());
+        main.addRouteBuilder(new GraphicCreator());
         
         //Route9 statistic2FB (process -> API)
-        //main.addRouteBuilder(new StatisticToFacebook());
+        main.addRouteBuilder(new StatisticToFacebook());
 
         //Route10 statistic2Twitter (process -> API)
         //main.addRouteBuilder(new StatisticToTwitter());
