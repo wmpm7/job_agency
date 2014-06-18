@@ -13,17 +13,10 @@ public class AggregateEmail extends RouteBuilder{
 		
 		.routeId("Aggregator-Route")
 		.aggregate(constant(true), new MyAggregationStrategy())
-		.completionInterval(5000)
+		.completionInterval(3000)
 		
-		
-		
-		//.aggregate(header("CamelFileName"), new MyAggregationStrategy())
-		//.aggregate( constant(true), AggregationStrategies.bean(AggregationBean.class))
-		//.completionInterval(3000)
 		.to("file:target/fromApi/aggregated?fileName=aggregated")
-		.log("Titles aggregated")
-		.end();
+		.log("Titles aggregated");
 		
 	}
-
 }

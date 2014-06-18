@@ -25,19 +25,19 @@ public class MainApp {
         BasicConfigurator.configure();        
         
         //Route1 file2Queue [questionnaire]
-        //main.addRouteBuilder(new FileToQueueRoute());
+        main.addRouteBuilder(new FileToQueueRoute());
         
         //Route2 Filter useless 
-        //main.addRouteBuilder(new FilterQueueRoute());
+        main.addRouteBuilder(new FilterQueueRoute());
 
         //Route3 save2DB (queue -> DB)  [questionnaire]
-        //main.addRouteBuilder(new QueueToDBRoute());
+        main.addRouteBuilder(new QueueToDBRoute());
         
         //Route4 calcInterests 
         //main.addRouteBuilder(new calcInterests());
         
         //Route5 searchJobIntern (DB -> process)
-        //main.addRouteBuilder(new SearchJobIntern());
+        //main.addRouteBuilder(new SearchJobIntern()); dominik
         
         //Route6 searchJobExtern (API -> process)
         //Derzeit wird ein statischer String bei Karriere abgefragt. 
@@ -52,36 +52,36 @@ public class MainApp {
         //main.addRouteBuilder(new GraphicCreator());
         
         //Route9 statistic2FB (process -> API)
-        //main.addRouteBuilder(new StatisticToFacebook());
+        //main.addRouteBuilder(new StatisticToFacebook()); dominik
 
         //Route10 statistic2Twitter (process -> API)
-        //main.addRouteBuilder(new StatisticToTwitter());
+        //main.addRouteBuilder(new StatisticToTwitter()); wird nicht gemacht
         
         //Route11 statistic2Website with processor for PDF (process -> API)
-        //main.addRouteBuilder(new StatisticToWebsite());
+        //main.addRouteBuilder(new StatisticToWebsite()); irene (grafik ins pdf)
 
         //Route12 aggregateEmail (process -> outbound)
         main.addRouteBuilder(new AggregateEmail());
 
         //Route13 sendEmail 
-        //main.addRouteBuilder(new EmailToCustomerRoute());
+        main.addRouteBuilder(new EmailToCustomerRoute());
 
 
         
         //NEWSLETTER
         
         //Route14 PublishSubscribe
-        //main.addRouteBuilder(new NewsletterRoute());
+        main.addRouteBuilder(new NewsletterRoute());
         
         
         //JOBOFFERS INTO INTERN DATABASE
         
         
         //Route15 file2Queue [job offer]
-        //main.addRouteBuilder(new JobofferToQueueRoute());
+        main.addRouteBuilder(new JobofferToQueueRoute());
         
         //Route16 save2DB (queue -> DB) [job offer]
-        //main.addRouteBuilder(new JobofferQueueToDBRoute());
+        main.addRouteBuilder(new JobofferQueueToDBRoute());
         
 
         

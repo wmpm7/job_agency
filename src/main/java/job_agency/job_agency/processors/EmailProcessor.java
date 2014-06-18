@@ -25,7 +25,7 @@ public class EmailProcessor implements Processor{
 	    exchange.getIn().setHeader("subject", "Result job questionnaire");
 	    
 	    exchange.getIn().setHeader("recipient",
-	    		"smtps://wmpm.group7@smtp.gmail.com:625?password={{emailPassword}}&username={{emailUsername}}"
+	    		"smtps://wmpm.group7@smtp.gmail.com:25?password={{emailPassword}}&username={{emailUsername}}"   //port 25 or port 465
 	    		+ "&mail.smtp.starttls.enable=true"
 	    		+ "&to=" + email);
 	}

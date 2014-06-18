@@ -16,7 +16,9 @@ public class SearchJobExtern extends RouteBuilder{
 	public void configure() throws Exception {
 		// TODO Auto-generated method stub
 		from("http://www.karriere.at/api/job/list?key=d1fe2f00164ddb3223728ac6f79cd7f5&keyword=PHP,MySql,Linux&location=Wien")
-		.to("file:target/fromApi/karriere");	
+		.to("file:target/fromApi/karriere")
+		.delay(3000)
+		.log("karriere offers loaded");	
 		
 		from("file:target/fromApi/karriere")
         .split(body(String.class).tokenize("\\},\\{"))
