@@ -1,5 +1,8 @@
 package job_agency.job_agency.routes;
 
+import job_agency.job_agency.processors.FBProcessor;
+import job_agency.job_agency.processors.PDFProcessor;
+
 import org.apache.camel.builder.RouteBuilder;
 
 public class StatisticToFacebook extends RouteBuilder{
@@ -13,12 +16,11 @@ public class StatisticToFacebook extends RouteBuilder{
 //		  		+ "&oAuthAppId=245046939020059"
 //		  		+ "&oAuthAppSecret=fba916c9088b2776937f4715dd0e5b00");
 		
-		from("file://src/data/test?noop=true")
-		  .to("facebook://postStatusMessage?"
-		  		+ "message=blub"
-		  		+ "&oAuthAccessToken={{FBAuthAccessToken}}"
-		  		+ "&oAuthAppId={{FBAuthAppId}}"
-		  		+ "&oAuthAppSecret={{FBAuthAppSecret}}");
+		from("file://outbound/statistics?noop=true&idempotentKey=${file:name}-${file:modified}")
+		.routeId("StatisticToFacebook-Route")
+		.process(new FBProcessor())
+		.recipientList(header("recipient"))
+		.log("Die Statistik wurde auf FB gepostet!");
 		
 	}
 

@@ -9,13 +9,14 @@ public class NewsletterRoute extends RouteBuilder{
 	public void configure(){
 
 		from("timer://foo2?period=90000")
-		.log("send newsletter")
+		.routeId("Newsletter-Route")
 		.setBody(constant("select email from person union select email from joboffer"))
 		//DB FLAG fehlt ob subscribed
 		.to("jdbc:dataSource")
 		.process(new SubscribeProcessor())
 		.multicast()
-		.recipientList(header("recipients"));
+		.recipientList(header("recipients"))
+		.log("Newsletters sent to subscribed people!");
 	}
 
 

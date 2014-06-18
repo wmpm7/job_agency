@@ -11,10 +11,11 @@ public class EmailToCustomerRoute extends RouteBuilder {
 
 
 		from("jms:emailQueue")
+		.routeId("EMailToCustomer-Route")
 		.log("sending email for object ${header.CamelFileName}")
 		.process(new EmailProcessor())
 		.recipientList(header("recipient"))
-		.log("email sent");
+		.log("New EMail sent to customer!");
 
 	}
 

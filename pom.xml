@@ -120,6 +120,12 @@
 			<artifactId>jfreechart</artifactId>
 			<version>1.0.17</version>
 		</dependency>
+		
+		<!-- http for karriere API -->
+		<dependency>
+     			<groupId>org.apache.camel</groupId>
+     			<artifactId>camel-http</artifactId>
+ 		</dependency>
 
 	</dependencies>
 

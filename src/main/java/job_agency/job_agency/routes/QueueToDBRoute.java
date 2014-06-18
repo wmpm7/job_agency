@@ -9,9 +9,12 @@ public class QueueToDBRoute extends RouteBuilder{
 	@Override
 	public void configure() throws Exception {
 		from("jms:FilteredInsertQueue")
+		.routeId("QueueToDB-Route")
 			.to("jms:emailQueue") //zum testen des email senden, da E-Mail content noch fehlt
+			.to("jms:karriereQueue")
 			.process(new InsertProcessor())
-			.to("jdbc:dataSource");
+			.to("jdbc:dataSource")
+			.log("People from Austria are added to DB --> TABLE Person");
 	}
 
 }

@@ -19,7 +19,8 @@ public class FileToQueueRoute extends RouteBuilder{
 		DataFormat df = jaxb;
 		
 		from("file://inbound/questionnaires?noop=true")
-		.log("start content-based rounting for incoming XML and JSON files")
+		.routeId("FileToQueue-Route")
+		.log("Content-based rounting started for incoming XML and JSON files (folder: inbound/questionnaires)")
 		.choice()
 			.when().simple("${file:name.ext} == 'json'").
 				//JSON TO POJO
