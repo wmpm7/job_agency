@@ -44,7 +44,7 @@ public class MainApp {
         //Derzeit wird ein statischer String bei Karriere abgefragt. 
         //Erhaltene Jobangebote werden gesplittet und neu formatiert
         //Aggregator fehlt noch
-        main.addRouteBuilder(new SearchJobExtern());
+//        main.addRouteBuilder(new SearchJobExtern());
         
         //Route7 calcStatistic 
         main.addRouteBuilder(new CalcStatistic());
@@ -53,13 +53,13 @@ public class MainApp {
         main.addRouteBuilder(new GraphicCreator());
         
         //Route9 statistic2FB (process -> API)
-        main.addRouteBuilder(new StatisticToFacebook());
+//        main.addRouteBuilder(new StatisticToFacebook());
 
         //Route10 statistic2Twitter (process -> API)
         //main.addRouteBuilder(new StatisticToTwitter());
         
         //Route11 statistic2Website with processor for PDF (process -> API)
-        //main.addRouteBuilder(new StatisticToWebsite());
+        main.addRouteBuilder(new StatisticToWebsite());
 
         //Route12 aggregateEmail (process -> outbound)
         main.addRouteBuilder(new AggregateEmail());

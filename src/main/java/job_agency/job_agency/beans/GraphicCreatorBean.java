@@ -1,7 +1,9 @@
 package job_agency.job_agency.beans;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;

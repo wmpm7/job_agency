@@ -17,6 +17,16 @@ public class PDFUtil {
 			"<fo:page-sequence master-reference=\"A4\">\n" +
 			"  <fo:flow flow-name=\"xsl-region-body\">\n" +
 			"#BLOCK_CONTENT" +
+			"<fo:block>" + 
+			"<fo:external-graphic src=\"outbound/statistics/graphics/FemaleMalePieChart.jpg#page=1\" />" +
+			/*************************************************************/
+			/*
+			 * shalalalalalala statt src = "hardcoded" src = " image-content
+			 * replace image-content with path. der kommt aus dem pdfprocessor
+			 * und im pdfprocessor geb ich nicht das file selber sondern nur den pfad mit (könnt vl noch bissi tricky werden)
+			 * 
+			 ****************************************************************/
+			"</fo:block>" + 
 			"  </fo:flow>\n" +
 			"</fo:page-sequence>\n" +
 			"\n" +
@@ -32,10 +42,12 @@ public class PDFUtil {
 	}
 
 	public static String getFilledXSLFO(String content){
-		return fopMainTemplate.replaceAll("#BLOCK_CONTENT", getXSLFOBlock(content));
+		return fopMainTemplate.replace("#BLOCK_CONTENT", getXSLFOBlock(content));
+//		return fopMainTemplate.replaceAll("#BLOCK_CONTENT", getXSLFOBlock(content));
 	}
 
 	private static String getXSLFOBlock(String line){
-		return fopBlockTemplate.replaceAll("#CONTENT", line);
+		return fopBlockTemplate.replace("#CONTENT", line);
+//		return fopBlockTemplate.replaceAll("#CONTENT", line);
 	}
 }
