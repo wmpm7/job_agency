@@ -69,7 +69,7 @@ public class DatabaseBean {
               + "  email varchar(30),\n"
               + "  jobdescription varchar(300),\n"
               + "  salary varchar(30),\n"
-              + "  keyword varchar(200)\n"
+              + "  keyword varchar(200) \n"
               + ")";
         
 

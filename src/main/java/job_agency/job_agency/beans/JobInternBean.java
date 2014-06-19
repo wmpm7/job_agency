@@ -45,7 +45,7 @@ public class JobInternBean
 			{
 				Joboffer job = buildJob(row);
 				jobs.add(job);
-				LOG.info(job.getKeyWord());
+				LOG.info(job.getKeyword());
 			}
 		}
 	}
@@ -75,6 +75,7 @@ public class JobInternBean
 		j.setEmail((String) row.get("EMAIL"));
 		j.setJobdescription((String) row.get("JOBDESCRIPTION"));
 		j.setSalary((String) row.get("SALARY"));
+		j.setKeyword((String) row.get("KEYWORD"));
 		return j;
 	}
 }
