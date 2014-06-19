@@ -1,8 +1,5 @@
 package job_agency.job_agency.routes;
 
-import java.io.File;
-import java.io.OutputStream;
-
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 

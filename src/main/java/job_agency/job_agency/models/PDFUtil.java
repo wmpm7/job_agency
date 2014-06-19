@@ -18,14 +18,7 @@ public class PDFUtil {
 			"  <fo:flow flow-name=\"xsl-region-body\">\n" +
 			"#BLOCK_CONTENT" +
 			"<fo:block>" + 
-			"<fo:external-graphic src=\"outbound/statistics/graphics/FemaleMalePieChart.jpg#page=1\" />" +
-			/*************************************************************/
-			/*
-			 * shalalalalalala statt src = "hardcoded" src = " image-content
-			 * replace image-content with path. der kommt aus dem pdfprocessor
-			 * und im pdfprocessor geb ich nicht das file selber sondern nur den pfad mit (könnt vl noch bissi tricky werden)
-			 * 
-			 ****************************************************************/
+			"<fo:external-graphic src=\"#IMAGE_CONTENT\" />" +
 			"</fo:block>" + 
 			"  </fo:flow>\n" +
 			"</fo:page-sequence>\n" +
@@ -33,21 +26,20 @@ public class PDFUtil {
 			"</fo:root>";
 	private static final String fopBlockTemplate = "    <fo:block font-family=\"Courier\" font-weight=\"normal\" " +
 			"font-style=\"normal\" score-spaces=\"true\" white-space=\"pre\" linefeed-treatment=\"preserve\" " +
-			"white-space-collapse=\"false\" white-space-treatment=\"preserve\" font-size=\"10pt\">#CONTENT</fo:block>\n";
+			"white-space-collapse=\"false\" white-space-treatment=\"preserve\" font-size=\"16pt\">#CONTENT</fo:block>\n";
 
 	public static String getFileNameWithoutExtension(Exchange exchange){
 		String fileName = (String) exchange.getIn().getHeader(Exchange.FILE_NAME);
 		return fileName.substring(0, fileName.indexOf(EXT_DELIM));
-		//return fileName;
 	}
 
-	public static String getFilledXSLFO(String content){
-		return fopMainTemplate.replace("#BLOCK_CONTENT", getXSLFOBlock(content));
-//		return fopMainTemplate.replaceAll("#BLOCK_CONTENT", getXSLFOBlock(content));
+	public static String getFilledXSLFO(String content, String path){
+		String str =  fopMainTemplate.replace("#BLOCK_CONTENT", getXSLFOBlock(content));
+		return str.replace("#IMAGE_CONTENT", path);
 	}
 
 	private static String getXSLFOBlock(String line){
 		return fopBlockTemplate.replace("#CONTENT", line);
-//		return fopBlockTemplate.replaceAll("#CONTENT", line);
 	}
+	
 }

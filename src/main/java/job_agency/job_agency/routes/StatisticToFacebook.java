@@ -1,7 +1,6 @@
 package job_agency.job_agency.routes;
 
 import job_agency.job_agency.processors.FBProcessor;
-import job_agency.job_agency.processors.PDFProcessor;
 
 import org.apache.camel.builder.RouteBuilder;
 

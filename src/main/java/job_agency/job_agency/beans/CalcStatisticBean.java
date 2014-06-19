@@ -68,7 +68,6 @@ public class CalcStatisticBean
 		this.femaleCounter = 0;
 	}
 
-//	public void calc (Exchange arg0)
 	public Statistics calc (Exchange arg0)
 	{
 		LOG.debug("_____________m:" + stat.getMaleCounter() + "_______________");
@@ -84,8 +83,6 @@ public class CalcStatisticBean
 			ageCount = ageCount + elem.getBirthday().getAge();
 		}
 		stat.setMeanAge(ageCount / stat.getNumberOfPeople());
-		
-//		arg0.getIn().setBody("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" + stat.toString());
 		
 		return stat;
 	}

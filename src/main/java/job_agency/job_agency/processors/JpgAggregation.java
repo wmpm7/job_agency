@@ -1,53 +1,61 @@
 package job_agency.job_agency.processors;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ByteArrayInputStream;
-import java.io.SequenceInputStream;
-import java.io.StringWriter;
+import job_agency.job_agency.models.PDFUtil;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Image;
-import com.itextpdf.text.pdf.PdfWriter;
 
 public class JpgAggregation implements AggregationStrategy {
 
 	private static final Logger LOG = LoggerFactory.getLogger(JpgAggregation.class);
 
 	@Override
-	public Exchange aggregate(Exchange statistic, Exchange image) {
-
-		
-		Document document = new Document();
-	    String input = "outbound/statistics/graphics/FemaleMalePieChart.jpeg"; // .gif and .jpg are ok too!
-	    String output = "outbound/statistics/graphics/FemaleMalePieChart.pdf";
-	    try {
-	      FileOutputStream fos = new FileOutputStream(output);
-	      PdfWriter writer = PdfWriter.getInstance(document, fos);
-	      writer.open();
-	      document.open();
-	      document.add(Image.getInstance(input));
-	      document.close();
-	      writer.close();
-	    }
-	    catch (Exception e) {
-	      e.printStackTrace();
-	    }
-		
-		
-		return null;
+	public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+      final String body = oldExchange.getIn().getBody(String.class);
+      final String imagePath = newExchange.getIn().getHeader("CamelFilePath", String.class);
+      
+      LOG.debug("body:" + body);
+      LOG.debug("header_path" + imagePath);
+      
+      String fileNameWithoutExtension = PDFUtil.getFileNameWithoutExtension(oldExchange);
+      final String convertToXSLFOBody = PDFUtil.getFilledXSLFO(body, imagePath);
+      
+      newExchange.getIn().setBody(convertToXSLFOBody);
+      newExchange.getIn().setHeader(Exchange.FILE_NAME, fileNameWithoutExtension + ".pdf");
+      
+	return newExchange;
 	}
+
+	
+	
+	
+	
+//	@Override
+//	public Exchange aggregate(Exchange statistic, Exchange image) {
+//
+//		
+//		Document document = new Document();
+//	    String input = "outbound/statistics/graphics/FemaleMalePieChart.jpeg"; // .gif and .jpg are ok too!
+//	    String output = "outbound/statistics/graphics/FemaleMalePieChart.pdf";
+//	    try {
+//	      FileOutputStream fos = new FileOutputStream(output);
+//	      PdfWriter writer = PdfWriter.getInstance(document, fos);
+//	      writer.open();
+//	      document.open();
+//	      document.add(Image.getInstance(input));
+//	      document.close();
+//	      writer.close();
+//	    }
+//	    catch (Exception e) {
+//	      e.printStackTrace();
+//	    }
+//		
+//		
+//		return null;
+//	}
 
  
 	
