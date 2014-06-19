@@ -15,7 +15,7 @@ public class AggregateEmail extends RouteBuilder{
 		.aggregate(constant(true), new MyAggregationStrategy())
 		.completionInterval(3000)
 		
-		.to("file:target/fromApi/aggregated?fileName=aggregated")
+		.to("file:target/fromApi/aggregated?fileName=external_offers")
 		.log("Titles aggregated");
 		
 	}

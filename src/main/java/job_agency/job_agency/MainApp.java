@@ -11,6 +11,7 @@ import job_agency.job_agency.routes.JobofferToQueueRoute;
 import job_agency.job_agency.routes.NewsletterRoute;
 import job_agency.job_agency.routes.QueueToDBRoute;
 import job_agency.job_agency.routes.SearchJobExtern;
+import job_agency.job_agency.routes.SearchJobIntern;
 import job_agency.job_agency.routes.StatisticToWebsite;
 
 import org.apache.camel.spring.Main;
@@ -23,6 +24,14 @@ public class MainApp {
         main.enableHangupSupport();
         
         BasicConfigurator.configure();        
+        
+        //Route15 file2Queue [job offer]
+        main.addRouteBuilder(new JobofferToQueueRoute());
+        
+        //Route16 save2DB (queue -> DB) [job offer]
+        main.addRouteBuilder(new JobofferQueueToDBRoute());
+        
+        
         
         //Route1 file2Queue [questionnaire]
         main.addRouteBuilder(new FileToQueueRoute());
@@ -37,13 +46,14 @@ public class MainApp {
         //main.addRouteBuilder(new calcInterests());
         
         //Route5 searchJobIntern (DB -> process)
-        //main.addRouteBuilder(new SearchJobIntern()); dominik
+        main.addRouteBuilder(new SearchJobIntern()); //dominik
         
         //Route6 searchJobExtern (API -> process)
         //Derzeit wird ein statischer String bei Karriere abgefragt. 
         //Erhaltene Jobangebote werden gesplittet und neu formatiert
         //Aggregator fehlt noch
         main.addRouteBuilder(new SearchJobExtern());
+              
         
         //Route7 calcStatistic 
         //main.addRouteBuilder(new CalcStatistic());
@@ -64,24 +74,20 @@ public class MainApp {
         main.addRouteBuilder(new AggregateEmail());
 
         //Route13 sendEmail 
-        main.addRouteBuilder(new EmailToCustomerRoute());
+        //main.addRouteBuilder(new EmailToCustomerRoute());
 
 
         
         //NEWSLETTER
         
         //Route14 PublishSubscribe
-        main.addRouteBuilder(new NewsletterRoute());
+        //main.addRouteBuilder(new NewsletterRoute());
         
         
         //JOBOFFERS INTO INTERN DATABASE
         
+      
         
-        //Route15 file2Queue [job offer]
-        main.addRouteBuilder(new JobofferToQueueRoute());
-        
-        //Route16 save2DB (queue -> DB) [job offer]
-        main.addRouteBuilder(new JobofferQueueToDBRoute());
         
 
         

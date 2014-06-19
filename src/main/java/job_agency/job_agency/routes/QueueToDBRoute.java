@@ -12,6 +12,7 @@ public class QueueToDBRoute extends RouteBuilder{
 		.routeId("QueueToDB-Route")
 			.to("jms:emailQueue") //zum testen des email senden, da E-Mail content noch fehlt
 			.to("jms:karriereQueue")
+			.to("jms:internalOfferQueue")
 			.process(new InsertProcessor())
 			.to("jdbc:dataSource")
 			.log("People from Austria are added to DB --> TABLE Person");

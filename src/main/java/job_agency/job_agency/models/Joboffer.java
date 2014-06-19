@@ -10,6 +10,7 @@ public class Joboffer {
 	private String email;
 	private String jobdescription;
 	private String salary;
+	private String keyWord;
 	
 	public String getTitle() {
 		return title;
@@ -47,6 +48,13 @@ public class Joboffer {
 	public void setSalary(String salary) {
 		this.salary = salary;
 	}
+	public String getKeyWord() {
+		return keyWord;
+	}
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+	}
+	
 	
 	
 }

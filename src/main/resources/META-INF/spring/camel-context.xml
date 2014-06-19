@@ -35,6 +35,8 @@
 	<bean id="JobExternBean" class="job_agency.job_agency.beans.JobExternBean" />
 	
 	<bean id="LinkBean" class="job_agency.job_agency.beans.LinkBean" />
+	
+	<bean id="JobInternBean" class="job_agency.job_agency.beans.JobInternBean" />
 		
 	<!-- Beans ende -->
 
