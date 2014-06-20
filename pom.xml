@@ -112,7 +112,20 @@
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-fop</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>fop</artifactId>
+			<version>0.94</version>
+		</dependency>
+
 		
+		<!-- image2pdf -->
+	<!-- <dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.0.6</version>
+		</dependency> -->
+
 		<!-- JFreeChart -->
 
 		<dependency>
@@ -120,12 +133,12 @@
 			<artifactId>jfreechart</artifactId>
 			<version>1.0.17</version>
 		</dependency>
-		
+
 		<!-- http for karriere API -->
 		<dependency>
-     			<groupId>org.apache.camel</groupId>
-     			<artifactId>camel-http</artifactId>
- 		</dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-http</artifactId>
+		</dependency>
 
 	</dependencies>
 

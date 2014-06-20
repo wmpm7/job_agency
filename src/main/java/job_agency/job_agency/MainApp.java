@@ -65,12 +65,12 @@ public class MainApp {
         //Route9 statistic2FB (process -> API)
         //main.addRouteBuilder(new StatisticToFacebook()); dominik
 
-
         //Route10 statistic2Twitter (process -> API)
         //main.addRouteBuilder(new StatisticToTwitter()); wird nicht gemacht
         
         //Route11 statistic2Website with processor for PDF (process -> API)
         //main.addRouteBuilder(new StatisticToWebsite()); irene (grafik ins pdf)
+
 
         //Route12 aggregateEmail (process -> outbound)
         main.addRouteBuilder(new AggregateEmail());

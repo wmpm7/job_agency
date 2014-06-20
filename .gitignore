@@ -16,4 +16,6 @@ workspace.xml
 
 derby.log
 .DS_Store
+
+bin
 /bin
