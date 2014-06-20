@@ -1,5 +1,6 @@
 package job_agency.job_agency;
 
+import job_agency.job_agency.routes.AggregateAllOffers;
 import job_agency.job_agency.routes.AggregateEmail;
 import job_agency.job_agency.routes.CalcStatistic;
 import job_agency.job_agency.routes.EmailToCustomerRoute;
@@ -69,11 +70,14 @@ public class MainApp {
         //main.addRouteBuilder(new StatisticToTwitter()); wird nicht gemacht
         
         //Route11 statistic2Website with processor for PDF (process -> API)
-        //main.addRouteBuilder(new StatisticToWebsite()); irene (grafik ins pdf)
+        main.addRouteBuilder(new StatisticToWebsite()); //irene (grafik ins pdf)
 
 
         //Route12 aggregateEmail (process -> outbound)
         main.addRouteBuilder(new AggregateEmail());
+        
+        //merge internal and external offers
+        main.addRouteBuilder(new AggregateAllOffers());
 
         //Route13 sendEmail 
         //main.addRouteBuilder(new EmailToCustomerRoute());

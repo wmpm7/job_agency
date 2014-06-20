@@ -7,7 +7,7 @@ public class MyAggregationStrategy implements AggregationStrategy {
 	 
  
     public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
-        if (oldExchange == null || newExchange.getIn().getBody(String.class).equals("")) {
+        if (oldExchange == null) {
         	String body = newExchange.getIn().getBody(String.class).split("Ort:")[0];
             newExchange.getIn().setBody("Offers from karriere.at:\n" + body.substring(7));
             return newExchange;
