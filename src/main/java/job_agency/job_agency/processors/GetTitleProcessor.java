@@ -1,10 +1,7 @@
 package job_agency.job_agency.processors;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
-import job_agency.job_agency.models.Joboffer;
 import job_agency.job_agency.models.Person;
 import job_agency.job_agency.models.Questionnaire;
 

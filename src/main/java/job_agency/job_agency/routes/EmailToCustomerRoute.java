@@ -9,13 +9,12 @@ public class EmailToCustomerRoute extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 
-
-		from("jms:emailQueue")
+		from("jms:emailQueue")				//zum testen - sollte aus dem aggregator kommen
 		.routeId("EMailToCustomer-Route")
 		.log("sending email for object ${header.CamelFileName}")
 		.process(new EmailProcessor())
 		.recipientList(header("recipient"))
-		.log("New EMail sent to customer!");
+		.log("New eMail sent to customer!");
 
 	}
 

@@ -1,24 +1,15 @@
 package job_agency.job_agency.routes;
 
-import javax.xml.bind.JAXBContext;
-
-import job_agency.job_agency.models.Joboffer;
-import job_agency.job_agency.processors.EmailProcessor;
 import job_agency.job_agency.processors.LinkProcessor;
 
-import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.converter.jaxb.JaxbDataFormat;
-import org.apache.camel.processor.aggregate.UseLatestAggregationStrategy;
-import org.apache.camel.spi.DataFormat;
 
 public class SearchJobExtern extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {
-		// TODO Auto-generated method stub
 		
-		from("jms:karriereQueue")   //verwendet den processor
+		from("jms:karriereQueue")   
 		.process(new LinkProcessor())
 		.recipientList(header("recipient"))
 		.log("Karrere.at wurde abgefragt!")

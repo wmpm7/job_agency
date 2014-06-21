@@ -1,25 +1,25 @@
 {
 	"person":{
-		"user": "Bobbi",
-		"firstName": "Bob",
-		"lastName": "Baumeister",
-		"sex": "m",
+		"user": "mary",
+		"firstName": "Maria",
+		"lastName": "Manninger",
+		"sex": "f",
 		"birthday": {
-			"day":"3",
-			"month":"1",
-			"year":"1986"
+			"day":"29",
+			"month":"6",
+			"year":"1992"
 		},
 		"address":{
-			"postalcode": "awefawef",
-			"city": "Wien",
+			"postalcode": "6010",
+			"city": "Innsbruck",
 			"country": "AUT"
 		},
 		"highesteducation":{
-			"self": "TU Wien",
-			"mother": "Uni Wien",
-			"father": "Matura"
+			"self": "TU Innsbruck",
+			"mother": "BOKU Wien",
+			"father": "Uni f. Angewandte Kunst"
 		},
-		"email":"dsalcher@aim.com",
+		"email":"kevin17@gmx.at",
 		"location":"Wien",
 		"interest":"PHP"	
 	}

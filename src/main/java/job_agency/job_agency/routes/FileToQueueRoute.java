@@ -20,19 +20,17 @@ public class FileToQueueRoute extends RouteBuilder{
 		
 		from("file://inbound/questionnaires?noop=true")
 		.routeId("FileToQueue-Route")
-		.log("Content-based rounting started for incoming XML and JSON files (folder: inbound/questionnaires)")
+		.log("Content-based routing started for incoming XML and JSON files (folder: inbound/questionnaires)")
 		.choice()
 			.when().simple("${file:name.ext} == 'json'").
 				//JSON TO POJO
 				unmarshal().json(JsonLibrary.Jackson,Questionnaire.class)
 				.to("jms:PojoInsertQueue")
 				.log("PojoInsertQueue:JSON file added!")
-			//to("file:src/data/json")
 			.otherwise()
 			 	.unmarshal(df)
 			 	.to("jms:PojoInsertQueue")
 			 	.log("PojoInsertQueue:XML file added!");
-			//.to("file:src/data/xml");		
 	}
 
 }

@@ -9,7 +9,6 @@ import job_agency.job_agency.models.Address;
 import job_agency.job_agency.models.Birthday;
 import job_agency.job_agency.models.Education;
 import job_agency.job_agency.models.Person;
-import job_agency.job_agency.models.Statistics;
 
 import org.apache.camel.Exchange;
 import org.slf4j.Logger;

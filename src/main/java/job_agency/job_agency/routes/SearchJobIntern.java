@@ -1,7 +1,6 @@
 package job_agency.job_agency.routes;
 
 import job_agency.job_agency.processors.GetTitleProcessor;
-import job_agency.job_agency.processors.LinkProcessor;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;

@@ -2,20 +2,13 @@ package job_agency.job_agency.beans;
 
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
 import job_agency.job_agency.models.Address;
-import job_agency.job_agency.models.Birthday;
-import job_agency.job_agency.models.Education;
 import job_agency.job_agency.models.Joboffer;
-import job_agency.job_agency.models.Person;
-import job_agency.job_agency.models.Statistics;
 
-import org.apache.camel.BeanInject;
 import org.apache.camel.Exchange;
-import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

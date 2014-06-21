@@ -8,8 +8,9 @@ public class GraphicCreator extends RouteBuilder{
 	public void configure() throws Exception {
 		from("jms:graphicQueue")
 		.routeId("GraphicCreator-Route")
-			.beanRef("GraphicCreatorBean", "createPieChart")
-			.log("PieChart created: Comparision between female and male people! Output folder: outbound/statistics/graphics");
+		.beanRef("GraphicCreatorBean", "createPieChart")
+		.log("PieChart created: Comparision between female and male people! Output folder: outbound/statistics/graphics")
+		.to("jms:pieChart");
 	}
 
 }

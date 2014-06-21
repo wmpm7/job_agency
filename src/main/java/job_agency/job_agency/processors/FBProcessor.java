@@ -1,7 +1,5 @@
 package job_agency.job_agency.processors;
 
-import job_agency.job_agency.models.PDFUtil;
-
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 

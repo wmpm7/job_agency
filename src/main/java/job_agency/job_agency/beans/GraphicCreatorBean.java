@@ -10,9 +10,12 @@ import org.jfree.data.general.DefaultPieDataset;
 
 public class GraphicCreatorBean {
 
-	public void createPieChart(String str) throws IOException{
-	
-		//String str = exchange.getIn().getBody(String.class);
+	private static int count = 0;
+
+	//	public void createPieChart(String str) throws IOException{
+	public File createPieChart(String str) throws IOException{
+
+		count++;
 		double male=0;
 		double female=0;
 		for (String s : str.split("\n")){
@@ -23,18 +26,20 @@ public class GraphicCreatorBean {
 				female = Double.parseDouble(s.split("=")[1]);
 			}
 		}
-		
+
 		DefaultPieDataset dataset = new DefaultPieDataset();
-		 
+
 		dataset.setValue("Male", male);
 		dataset.setValue("Female", female);
-		 
+
 		/* Create a 3D Pie chart. */
 		JFreeChart chart = ChartFactory.createPieChart3D("FemaleMaleComparison", dataset, true, true, false);
-		 
+
 		/* Save the chart on the hard drive. */
-		ChartUtilities.saveChartAsJPEG(new File("outbound/statistics/graphics/FemaleMalePieChart.jpg"), chart, 500, 280);
-		
+		File file = new File("outbound/statistics/graphics/FemaleMalePieChart" + count + ".jpg");
+		ChartUtilities.saveChartAsJPEG(file, chart, 500, 280);
+
+		return file;
 	}
-	
+
 }

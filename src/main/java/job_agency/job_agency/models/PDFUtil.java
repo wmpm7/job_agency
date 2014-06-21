@@ -37,7 +37,7 @@ public class PDFUtil {
 		String str =  fopMainTemplate.replace("#BLOCK_CONTENT", getXSLFOBlock(content));
 		return str.replace("#IMAGE_CONTENT", path);
 	}
-
+	
 	private static String getXSLFOBlock(String line){
 		return fopBlockTemplate.replace("#CONTENT", line);
 	}

@@ -33,29 +33,23 @@ public class MainApp {
         //Route16 save2DB (queue -> DB) [job offer]
         main.addRouteBuilder(new JobofferQueueToDBRoute());
         
-        
-        
         //Route1 file2Queue [questionnaire]
         main.addRouteBuilder(new FileToQueueRoute());
         
-        //Route2 Filter useless 
+        //Route2 Filter [questionnaire] 
         main.addRouteBuilder(new FilterQueueRoute());
 
         //Route3 save2DB (queue -> DB)  [questionnaire]
         main.addRouteBuilder(new QueueToDBRoute());
         
         //Route4 calcInterests 
-        //main.addRouteBuilder(new calcInterests());
+//        main.addRouteBuilder(new calcInterests());
         
         //Route5 searchJobIntern (DB -> process)
-        main.addRouteBuilder(new SearchJobIntern()); //dominik
+        main.addRouteBuilder(new SearchJobIntern());
         
         //Route6 searchJobExtern (API -> process)
-        //Derzeit wird ein statischer String bei Karriere abgefragt. 
-        //Erhaltene Jobangebote werden gesplittet und neu formatiert
-        //Aggregator fehlt noch
         main.addRouteBuilder(new SearchJobExtern());
-              
         
         //Route7 calcStatistic 
         main.addRouteBuilder(new CalcStatistic());
@@ -64,14 +58,13 @@ public class MainApp {
         main.addRouteBuilder(new GraphicCreator());
         
         //Route9 statistic2FB (process -> API)
-        //main.addRouteBuilder(new StatisticToFacebook()); dominik
+        //main.addRouteBuilder(new StatisticToFacebook());
 
         //Route10 statistic2Twitter (process -> API)
         //main.addRouteBuilder(new StatisticToTwitter()); wird nicht gemacht
         
         //Route11 statistic2Website with processor for PDF (process -> API)
-        main.addRouteBuilder(new StatisticToWebsite()); //irene (grafik ins pdf)
-
+        main.addRouteBuilder(new StatisticToWebsite()); 
 
         //Route12 aggregateEmail (process -> outbound)
         main.addRouteBuilder(new AggregateEmail());
@@ -80,21 +73,10 @@ public class MainApp {
         main.addRouteBuilder(new AggregateAllOffers());
 
         //Route13 sendEmail 
-        //main.addRouteBuilder(new EmailToCustomerRoute());
+//        main.addRouteBuilder(new EmailToCustomerRoute());
 
-
-        
-        //NEWSLETTER
-        
         //Route14 PublishSubscribe
-        //main.addRouteBuilder(new NewsletterRoute());
-        
-        
-        //JOBOFFERS INTO INTERN DATABASE
-        
-      
-        
-        
+//        main.addRouteBuilder(new NewsletterRoute());
 
         
         main.run(args);
