@@ -10,19 +10,19 @@ public class SearchJobExtern extends RouteBuilder{
 	public void configure() throws Exception {
 		
 		from("jms:karriereQueue")   
-		.process(new LinkProcessor())
-		.recipientList(header("recipient"))
-		.log("Karrere.at wurde abgefragt!")
-		.to("file:target/fromApi/karriere")
+			.process(new LinkProcessor())
+			.recipientList(header("recipient"))
+			.log("Karrere.at wurde abgefragt!")
+		.to("jms:karriereOffersQueue")
 		.delay(3000)
 		.log("karriere offers loaded");
 		
-		from("file:target/fromApi/karriere")
-        .split(body(String.class).tokenize("\\},\\{"))
-            .to("file:target/fromApi/split?fileName=${header.CamelSplitIndex}");
+		from("jms:karriereOffersQueue")
+        	.split(body(String.class).tokenize("\\},\\{"))
+        .to("file:target/fromApi/split?fileName=${header.CamelSplitIndex}");
 		
 		from("file:target/fromApi/split")
-		.beanRef("JobExternBean","reformat")
+			.beanRef("JobExternBean","reformat")
 		.to("file:target/fromApi/reformat")
 		.to("jms:JobExternQueue");
 		

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire>
+	<person>
+	  <user>domi</user>
+	  <firstName>Dominik</firstName>
+	  <lastName>Salcher</lastName>
+	  <sex>m</sex>
+	  <birthday>
+	   	<day>5</day>
+	    <month>5</month>
+	  	<year>1990</year>
+	  </birthday>
+	  
+	  <address>
+	  	<postalcode>1020</postalcode>
+	  	<city>Wien</city>
+	  	<country>AUT</country>
+	  </address>
+	  <highesteducation>
+	  	<self>TU Wien</self>
+	  	<mother>VetMed Wien</mother>
+	  	<father>BOKU</father>
+	  </highesteducation>
+	  <email>dsalcher@aim.com</email>
+	  <location>Wien</location>
+	  <interest>C++</interest>
+	  
+	  <newsletter>n</newsletter>
+	</person>
+</questionnaire>

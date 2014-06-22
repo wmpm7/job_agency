@@ -26,10 +26,12 @@ public class FileToQueueRoute extends RouteBuilder{
 				//JSON TO POJO
 				unmarshal().json(JsonLibrary.Jackson,Questionnaire.class)
 				.to("jms:PojoInsertQueue")
+				.to("file:target/test")
 				.log("PojoInsertQueue:JSON file added!")
 			.otherwise()
 			 	.unmarshal(df)
 			 	.to("jms:PojoInsertQueue")
+			 	.to("file:target/test")
 			 	.log("PojoInsertQueue:XML file added!");
 	}
 

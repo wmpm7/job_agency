@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <questionnaire>
 	<person>
-	  <user>kev</user>
-	  <firstName>Kevin</firstName>
-	  <lastName>Beschorner</lastName>
-	  <sex>m</sex>
+	  <user>irene</user>
+	  <firstName>Irene</firstName>
+	  <lastName>Eichinger</lastName>
+	  <sex>f</sex>
 	  <birthday>
-	   	<day>3</day>
-	    <month>12</month>
-	  	<year>1975</year>
+	   	<day>25</day>
+	    <month>11</month>
+	  	<year>1990</year>
 	  </birthday>
 	  
 	  <address>
-	  	<postalcode>1120</postalcode>
+	  	<postalcode>1050</postalcode>
 	  	<city>Wien</city>
 	  	<country>AUT</country>
 	  </address>
 	  <highesteducation>
-	  	<self>Uni Wien</self>
-	  	<mother>TU Wien</mother>
+	  	<self>TU Wien</self>
+	  	<mother>Uni Wien</mother>
 	  	<father>Matura</father>
 	  </highesteducation>
-	  <email>kevin17@gmx.at</email>
-	  <location>Linz</location>
+	  <email>irene.eichinger@aon.at</email>
+	  <location>Graz</location>
 	  <interest>Java</interest>
 	  
 	  <newsletter>y</newsletter>
 	</person>
-	
 </questionnaire>

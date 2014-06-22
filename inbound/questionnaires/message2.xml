@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire>
+	<person>
+	  <user>chrisi</user>
+	  <firstName>Christoph</firstName>
+	  <lastName>Bartmann</lastName>
+	  <sex>m</sex>
+	  <birthday>
+	   	<day>22</day>
+	    <month>10</month>
+	  	<year>1990</year>
+	  </birthday>
+	  
+	  <address>
+	  	<postalcode>2483</postalcode>
+	  	<city>Weigelsdorf</city>
+	  	<country>AUT</country>
+	  </address>
+	  <highesteducation>
+	  	<self>TU Wien</self>
+	  	<mother>Med Uni Wien</mother>
+	  	<father>Matura</father>
+	  </highesteducation>
+	  <email>cbartmann@gmx.at</email>
+	  <location>Wien</location>
+	  <interest>php</interest>
+	  
+	  <newsletter>y</newsletter>
+	</person>
+</questionnaire>

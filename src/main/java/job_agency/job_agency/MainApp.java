@@ -40,43 +40,43 @@ public class MainApp {
         main.addRouteBuilder(new FilterQueueRoute());
 
         //Route3 save2DB (queue -> DB)  [questionnaire]
-        main.addRouteBuilder(new QueueToDBRoute());
+        main.addRouteBuilder(new QueueToDBRoute());        
         
-        //Route4 calcInterests 
-//        main.addRouteBuilder(new calcInterests());
-        
-        //Route5 searchJobIntern (DB -> process)
+        //Route4 searchJobIntern (DB -> process)
         main.addRouteBuilder(new SearchJobIntern());
         
-        //Route6 searchJobExtern (API -> process)
+        //Route5 searchJobExtern (API -> process)
         main.addRouteBuilder(new SearchJobExtern());
         
-        //Route7 calcStatistic 
+        //Route6 calcStatistic 
         main.addRouteBuilder(new CalcStatistic());
         
-        //Route8 createGraphics
+        //Route7 createGraphics
         main.addRouteBuilder(new GraphicCreator());
         
-        //Route9 statistic2FB (process -> API)
+        //Route8 statistic2FB (process -> API)
         //main.addRouteBuilder(new StatisticToFacebook());
 
-        //Route10 statistic2Twitter (process -> API)
-        //main.addRouteBuilder(new StatisticToTwitter()); wird nicht gemacht
         
-        //Route11 statistic2Website with processor for PDF (process -> API)
+        //IN AUT NICHT MOEGLICH --> WIE BEI MR1 BESPROCHEN
+        //Route9 statistic2Twitter (process -> API)
+        //main.addRouteBuilder(new StatisticToTwitter());
+        
+        //Route10 statistic2Website with processor for PDF (process -> API)
         main.addRouteBuilder(new StatisticToWebsite()); 
 
-        //Route12 aggregateEmail (process -> outbound)
-        main.addRouteBuilder(new AggregateEmail());
+        //Route11 aggregateEmail (process -> outbound)
+        //main.addRouteBuilder(new AggregateEmail());
         
         //merge internal and external offers
-        main.addRouteBuilder(new AggregateAllOffers());
+        //Route12
+        //main.addRouteBuilder(new AggregateAllOffers());
 
         //Route13 sendEmail 
 //        main.addRouteBuilder(new EmailToCustomerRoute());
 
         //Route14 PublishSubscribe
-//        main.addRouteBuilder(new NewsletterRoute());
+        main.addRouteBuilder(new NewsletterRoute());
 
         
         main.run(args);

@@ -1,14 +1,14 @@
 <joboffer>
 	<title>Java programmer</title>
 	<address>
-		<postalcode>1120</postalcode>
-	  	<city>Wien</city>
+		<postalcode>3470</postalcode>
+	  	<city>Graz</city>
 	  	<country>AUT</country>
 	</address>
-	<phone>012345/2342345</phone>
+	<phone>00433465/24568</phone>
 	<email>java@company1.at</email>
 	<jobdescription>We are looking for a java programmer, with a minimum of two years experience.</jobdescription>
-	<salary>min. 2800,-</salary>
+	<salary>min. 3000,-</salary>
 	<keyword>Java</keyword>
 	<newsletter>n</newsletter>
 </joboffer>

@@ -1,0 +1,27 @@
+{
+	"person":{
+		"user": "mary",
+		"firstName": "Maria",
+		"lastName": "Manninger",
+		"sex": "f",
+		"birthday": {
+			"day":"29",
+			"month":"6",
+			"year":"1992"
+		},
+		"address":{
+			"postalcode": "7000",
+			"city": "Eisenstadt",
+			"country": "AUT"
+		},
+		"highesteducation":{
+			"self": "FH Burgenland",
+			"mother": "BOKU Wien",
+			"father": "Uni f. Angewandte Kunst"
+		},
+		"email":"e0907194@student.tuwien.ac.at",
+		"location":"Eisenstadt",
+		"interest":"Bus",
+		"newsletter":"y"	
+	}
+}

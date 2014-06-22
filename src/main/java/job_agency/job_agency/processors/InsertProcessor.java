@@ -35,7 +35,7 @@ public class InsertProcessor implements Processor {
 		date = date + qu.person.getBirthday().getMonth() + "-" + qu.person.getBirthday().getYear();
 */
 		sqlstmt = new StringBuilder("insert into Person ");
-		sqlstmt.append("(username,firstname,lastname,sex,birthday,postalcode,city,country,educationself,educationmother,educationfather,email,location,interest) "); 
+		sqlstmt.append("(username,firstname,lastname,sex,birthday,postalcode,city,country,educationself,educationmother,educationfather,email,location,interest,newsletter) "); 
 		sqlstmt.append("values ('");
 		sqlstmt.append(qu.person.getUser()).append("','"); 
 		sqlstmt.append(qu.person.getFirstName()).append("','"); 
@@ -51,7 +51,15 @@ public class InsertProcessor implements Processor {
 		sqlstmt.append(qu.person.getHighesteducation().getFather()).append("','"); 
 		sqlstmt.append(qu.person.getEmail()).append("','");
 		sqlstmt.append(qu.person.getLocation()).append("','");
-		sqlstmt.append(qu.person.getInterest()).append("')");
+		sqlstmt.append(qu.person.getInterest()).append("',");
+		//sqlstmt.append(qu.person.getNewsletter());
+		 if (qu.person.getNewsletter().equals("y")){
+			 sqlstmt.append("true");
+		 }
+		 else{
+			 sqlstmt.append("false");
+		 }
+		 sqlstmt.append(")");
 		
 		Log.info("Questionnaire:   " + sqlstmt.toString());
 		

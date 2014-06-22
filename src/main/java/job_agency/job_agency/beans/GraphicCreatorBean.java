@@ -18,14 +18,19 @@ public class GraphicCreatorBean {
 		count++;
 		double male=0;
 		double female=0;
-		for (String s : str.split("\n")){
+		String[] lines;
+		lines = str.split("\n");
+		
+		male = Double.parseDouble(lines[2].split(" part")[0]);
+		female = Double.parseDouble(lines[3].split(" part")[0]);
+		/*for (String s : str.split("\n")){
 			if (s.contains(" MALECOUNTER")){
 				male = Double.parseDouble(s.split("=")[1]);
 			}
 			else if (s.contains(" FEMALECOUNTER")){
 				female = Double.parseDouble(s.split("=")[1]);
 			}
-		}
+		}*/
 
 		DefaultPieDataset dataset = new DefaultPieDataset();
 

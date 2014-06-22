@@ -28,17 +28,20 @@ public class SubscribeProcessor implements Processor{
 		for(int i =0; i<data.size();i++)
 		{
 			Map<?, ?> row = (Map<?, ?>)data.get(i);
+			System.out.println("**************************************" + row.get("EMAIL") + "*************************");
 			list = list + endpoint + row.get("EMAIL") + ",";
 	    }
+		if (list.length()>0){
+			list = list.substring(0, list.length()-1);
+    		
+			
+		    exchange.getIn().setHeader("subject", "Newsletter job agency");
+		    exchange.getIn().setHeader("recipients", list);
+		    
+		    exchange.getIn().setBody("Dies ist der newsletter mit der neuesten statistik");
+		    exchange.getIn().addAttachment("statistic.pdf", new DataHandler(new FileDataSource("outbound/statistics/pdf/statistic.pdf")));
+		}
 		
-		list = list.substring(0, list.length()-1);
-	    		
-		
-	    exchange.getIn().setHeader("subject", "Newsletter job agency");
-	    exchange.getIn().setHeader("recipients", list);
-	    
-	    exchange.getIn().setBody("Dies ist der newsletter mit der neuesten statistik");
-	    exchange.getIn().addAttachment("statistic.pdf", new DataHandler(new FileDataSource("outbound/statistics/pdf/statistic.pdf")));
 	}
 
 }

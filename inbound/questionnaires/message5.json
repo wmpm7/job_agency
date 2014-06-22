@@ -1,13 +1,13 @@
 {
 	"person":{
-		"user": "mary",
-		"firstName": "Maria",
-		"lastName": "Manninger",
-		"sex": "f",
+		"user": "Roscoe",
+		"firstName": "Roscoe",
+		"lastName": "Baston",
+		"sex": "m",
 		"birthday": {
-			"day":"29",
-			"month":"6",
-			"year":"1992"
+			"day":"23",
+			"month":"4",
+			"year":"1988"
 		},
 		"address":{
 			"postalcode": "6010",
@@ -15,12 +15,13 @@
 			"country": "AUT"
 		},
 		"highesteducation":{
-			"self": "TU Innsbruck",
+			"self": "TU Wien",
 			"mother": "BOKU Wien",
 			"father": "Uni f. Angewandte Kunst"
 		},
-		"email":"kevin17@gmx.at",
+		"email":"e0825533@student.tuwien.ac.at",
 		"location":"Wien",
-		"interest":"PHP"	
+		"interest":"Java",
+		"newsletter":"n"
 	}
 }

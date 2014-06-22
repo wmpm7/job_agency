@@ -1,13 +1,14 @@
 <joboffer>
 	<title>PHP Developer</title>
 	<address>
-		<postalcode>1120</postalcode>
+		<postalcode>1010</postalcode>
 	  	<city>Wien</city>
 	  	<country>AUT</country>
 	</address>
-	<phone>012345/2342345</phone>
-	<email>java@company2.at</email>
+	<phone>04586/39586</phone>
+	<email>php@company2.at</email>
 	<jobdescription>Cooles, junges Team mit vielen Visionen</jobdescription>
 	<salary>min. 1800,-</salary>
 	<keyword>PHP</keyword>
+	<newsletter>n</newsletter>
 </joboffer>

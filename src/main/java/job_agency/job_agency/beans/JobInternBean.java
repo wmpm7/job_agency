@@ -45,13 +45,17 @@ public class JobInternBean
 
 	public String getTitleList()
 	{
-		String s="Offers from internal DB: \n";
+		StringBuilder s=new StringBuilder("Offers from internal DB: \n");
 		
 		for(int i=0; i<jobs.size(); i++)
 		{
-			s+= jobs.get(i).getTitle() + "\n";
+			s.append("\n");
+			s.append("Titel: " + jobs.get(i).getTitle() + "\n");
+			s.append("Beschreibung: " + jobs.get(i).getJobdescription() + "\n");
+			s.append("Ort: " +jobs.get(i).getAddress().getPostalcode() + " " + jobs.get(i).getAddress().getCity() + "\n");
+			s.append("E-Mail: " + jobs.get(i).getEmail() + "\n");
 		}
-		return s;
+		return s.toString();
 	}
 
 	private Joboffer buildJob(Map<?, ?> row) {

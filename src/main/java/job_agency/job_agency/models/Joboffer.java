@@ -11,7 +11,11 @@ public class Joboffer {
 	private String jobdescription;
 	private String salary;
 	private String keyword;
+	private String newsletter;
 	
+    public String getNewsletter() {
+		return newsletter;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -53,6 +57,9 @@ public class Joboffer {
 	}
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+	public void setNewsletter(String newsletter){
+		this.newsletter=newsletter;
 	}
 	
 	

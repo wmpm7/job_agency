@@ -56,7 +56,8 @@ public class DatabaseBean {
               + "  educationfather varchar(30),\n"
               + "  email varchar(30),\n"
               + "  location varchar(30),\n"
-              + "  interest varchar(30)\n" 
+              + "  interest varchar(30),\n" 
+              + "  newsletter boolean\n" 
               + ")";
         
         String sqljoboffer = "create table joboffer (\n"
@@ -69,7 +70,8 @@ public class DatabaseBean {
               + "  email varchar(30),\n"
               + "  jobdescription varchar(300),\n"
               + "  salary varchar(30),\n"
-              + "  keyword varchar(200) \n"
+              + "  keyword varchar(200),\n"
+              + "  newsletter boolean\n" 
               + ")";
         
 

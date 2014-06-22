@@ -24,8 +24,8 @@ public class CalcStatisticBean
 	private ArrayList<Joboffer> jobs;
 	private ArrayList<Person> persons;
 
-	private double maleCounter = 0;
-	private double femaleCounter = 0;
+	private int maleCounter = 0;
+	private int femaleCounter = 0;
 
 	@BeanInject("Statistics")
 	Statistics stat;

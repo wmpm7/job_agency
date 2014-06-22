@@ -1,8 +1,8 @@
 package job_agency.job_agency.models;
 
 public class Statistics {
-	private double maleCounter;
-	private double femaleCounter;
+	private int maleCounter;
+	private int femaleCounter;
 
 	private double percentMale;
 	private double percentFemale;
@@ -34,7 +34,7 @@ public class Statistics {
 	/**
 	 * @param maleCounter the maleCounter to set
 	 */
-	public void setMaleCounter(double maleCounter) {
+	public void setMaleCounter(int maleCounter) {
 		this.maleCounter = maleCounter;
 	}
 	/**
@@ -46,7 +46,7 @@ public class Statistics {
 	/**
 	 * @param femaleCounter the femaleCounter to set
 	 */
-	public void setFemaleCounter(double femaleCounter) {
+	public void setFemaleCounter(int femaleCounter) {
 		this.femaleCounter = femaleCounter;
 	}
 	/**
@@ -86,12 +86,12 @@ public class Statistics {
 	 */
 	@Override
 	public String toString() {
-		return "Statistics \n "
-				+ "maleCounter=" + maleCounter 
-				+ "\n femaleCounter=" + femaleCounter 
-				+ "\n percentMale=" + percentMale
-				+ "\n percentFemale=" + percentFemale 
-				+ "\n meanAge=" + meanAge;
+		return "Participant statistics of the WMPM job agency\n"
+				+ "\n\t" + maleCounter +" participant(s) is(are) male." 
+				+ "\n\t" + femaleCounter +" participant(s) is(are) female."
+				+ "\n\t" + Math.round(percentMale*100) + "% of the participants are male."
+				+ "\n\t" + Math.round(percentFemale*100)  + "% of the participants are female."
+				+ "\n\tThe average age of the participants is " + Math.round(meanAge) + ".\n\n";
 	}
 
 }

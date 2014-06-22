@@ -13,10 +13,15 @@ public class Person{
     private String email;
 	private String location;
     private String interest;
+    private String newsletter;
     
     
 
-    public String getUser() {
+    public String getNewsletter() {
+		return newsletter;
+	}
+
+	public String getUser() {
 		return user;
 	}
 
@@ -98,6 +103,11 @@ public class Person{
 		this.interest = interest;
 	}
 	
+	public void setNewsletter(String newsletter){
+		this.newsletter=newsletter;
+		System.out.println(this.toString());
+	}
+	
 	
 
 	@Override
@@ -106,7 +116,7 @@ public class Person{
 				+ ", lastName=" + lastName + ", sex=" + sex + ", birthday="
 				+ birthday + ", address=" + address + ", highesteducation="
 				+ highesteducation + ", email=" + email + ", location="
-				+ location + ", interest=" + interest + "]";
+				+ location + ", interest=" + interest + ", newsletter=" + newsletter + "]";
 	}
 
 	

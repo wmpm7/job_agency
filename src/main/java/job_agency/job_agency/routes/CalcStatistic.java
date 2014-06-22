@@ -15,7 +15,7 @@ public class CalcStatistic extends RouteBuilder{
 		.log("All persons read from DB")
 		.beanRef("CalcStatisticBean","addToList")
 		.beanRef("CalcStatisticBean","calc")
-		.beanRef("TransformationBean","makeUpperCase")
+		//.beanRef("TransformationBean","makeUpperCase")
 		.log("Statistics calculated and can be found in folder outbound/statistics!")
 		.setHeader(Exchange.FILE_NAME, constant("statistic.txt"))
 		.convertBodyTo(String.class, "UTF-8")

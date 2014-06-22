@@ -13,7 +13,7 @@ public class InsertJobofferProcessor implements Processor  {
 		 StringBuilder sqlstmt;
 		 
 		 sqlstmt = new StringBuilder("insert into Joboffer ");
-		 sqlstmt.append("(title,postalcode,city,country,phone,email,jobdescription,salary,keyword) ");
+		 sqlstmt.append("(title,postalcode,city,country,phone,email,jobdescription,salary,keyword,newsletter) ");
 		 sqlstmt.append("values ('");
 		 sqlstmt.append(offer.getTitle()).append("','");
 		 sqlstmt.append(offer.getAddress().getPostalcode()).append("','");
@@ -23,8 +23,15 @@ public class InsertJobofferProcessor implements Processor  {
 		 sqlstmt.append(offer.getEmail()).append("','");
 		 sqlstmt.append(offer.getJobdescription()).append("','");
 		 sqlstmt.append(offer.getSalary()).append("','");
-		 sqlstmt.append(offer.getKeyword());
-		 sqlstmt.append("')");
+		 sqlstmt.append(offer.getKeyword()).append("',");
+		 //sqlstmt.append(offer.getNewsletter());
+		 if (offer.getNewsletter().equals("y")){
+			 sqlstmt.append("true");
+		 }
+		 else{
+			 sqlstmt.append("false");
+		 }
+		 sqlstmt.append(")");
 		 
 		 arg0.getIn().setBody(sqlstmt.toString());
 	}
