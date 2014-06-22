@@ -20,7 +20,7 @@ public class SubscribeProcessor implements Processor{
 	    LOG.info(exchange.getIn().getBody(String.class));
 
 	    String list = "";
-	    String endpoint = "smtps://wmpm.group7@smtp.gmail.com:465?password={{emailPassword}}&username={{emailUsername}}" //port 25 or port 465
+	    String endpoint = "smtps://group7.wmpm@smtp.gmail.com:465?password={{emailPassword}}&username={{emailUsername}}" //port 25 or port 465
 	    		+ "&mail.smtp.starttls.enable=true&to=";
 	    
 	    List<?> data = exchange.getIn().getBody(List.class);
