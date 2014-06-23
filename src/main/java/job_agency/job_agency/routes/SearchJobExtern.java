@@ -23,8 +23,8 @@ public class SearchJobExtern extends RouteBuilder{
 		
 		from("file:target/fromApi/split")
 			.beanRef("JobExternBean","reformat")
-		.to("file:target/fromApi/reformat")
-		.to("jms:JobExternQueue");
+			.to("jms:JobExternQueue")
+			.to("file:target/fromApi/reformat");
 		
 	}
 	

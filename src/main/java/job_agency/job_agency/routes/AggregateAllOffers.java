@@ -16,6 +16,7 @@ public class AggregateAllOffers extends RouteBuilder{
 		//.completionInterval(10000)
 		.completionSize(2)
 		.to("file:target/fromApi/finish?fileName=all_offers")
+		.to("jms:emailQueue")
 		.log("Internal and external offers aggregated");
 		
 	}

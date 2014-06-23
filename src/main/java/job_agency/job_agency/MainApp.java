@@ -66,17 +66,17 @@ public class MainApp {
         main.addRouteBuilder(new StatisticToWebsite()); 
 
         //Route11 aggregateEmail (process -> outbound)
-        //main.addRouteBuilder(new AggregateEmail());
+        main.addRouteBuilder(new AggregateEmail());
         
         //merge internal and external offers
         //Route12
-        //main.addRouteBuilder(new AggregateAllOffers());
+        main.addRouteBuilder(new AggregateAllOffers());
 
         //Route13 sendEmail 
-//        main.addRouteBuilder(new EmailToCustomerRoute());
+        main.addRouteBuilder(new EmailToCustomerRoute());
 
         //Route14 PublishSubscribe
-        main.addRouteBuilder(new NewsletterRoute());
+        //main.addRouteBuilder(new NewsletterRoute());
 
         
         main.run(args);
