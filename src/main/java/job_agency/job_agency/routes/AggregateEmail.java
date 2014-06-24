@@ -9,8 +9,8 @@ public class AggregateEmail extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {
-		//from("file:target/fromApi/reformat")
-		from("jms:JobExternQueue")
+		from("file:target/fromApi/reformat")
+		//from("jms:JobExternQueue")
 		.routeId("Aggregator-Route")
 		
 		.aggregate(constant(false), new MyAggregationStrategy())

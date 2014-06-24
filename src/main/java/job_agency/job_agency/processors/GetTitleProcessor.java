@@ -1,8 +1,5 @@
 package job_agency.job_agency.processors;
 
-import java.util.ArrayList;
-
-import job_agency.job_agency.models.Person;
 import job_agency.job_agency.models.Questionnaire;
 
 import org.apache.camel.Exchange;
@@ -12,15 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class GetTitleProcessor implements Processor{
 
-	private static final Logger LOG = LoggerFactory.getLogger(GetTitleProcessor.class);
-	private ArrayList<Person> persons;
-	
-	
-	public GetTitleProcessor() 
-	{
-		this.persons = new ArrayList<Person>();
-	}
-	
+	private static final Logger LOG = LoggerFactory.getLogger(GetTitleProcessor.class);	
 
 	@Override
 	public void process(Exchange exchange) throws Exception {
@@ -28,14 +17,15 @@ public class GetTitleProcessor implements Processor{
 	    Questionnaire qu = exchange.getIn().getBody(Questionnaire.class);
 	    
 	    String key = qu.person.getInterest();
-
-	    //exchange.getIn().setHeader("recipient","http://www.karriere.at/api/job/list?key=d1fe2f00164ddb3223728ac6f79cd7f5&keyword=PHP&location=Wien");
-	 	    
-	    String sql = "select * from joboffer where keyword like '" + key + "'";//" + key + "'";
-	    LOG.info(sql);
-	    LOG.info(key);
-	    exchange.getIn().setBody(sql);// where keyword = 'Java'");//"+ key.toLowerCase() + "'");
+	    String who;
 	    
+	    who = qu.person.getUser();
+
+	    exchange.getIn().setHeader("CamelFileName", "internal_offers_" + who + ".txt"); 
+	    String sql = "select * from joboffer where keyword like '" + key + "'";//" + key + "'";
+	    LOG.debug(sql);
+	    LOG.debug(key);
+	    exchange.getIn().setBody(sql);// where keyword = 'Java'");//"+ key.toLowerCase() + "'");
 	    
 	}
 }

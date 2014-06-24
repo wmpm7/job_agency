@@ -1,7 +1,6 @@
-package job_agency.job_agency;
+  package job_agency.job_agency;
 
 import job_agency.job_agency.routes.AggregateAllOffers;
-import job_agency.job_agency.routes.AggregateEmail;
 import job_agency.job_agency.routes.CalcStatistic;
 import job_agency.job_agency.routes.EmailToCustomerRoute;
 import job_agency.job_agency.routes.FileToQueueRoute;
@@ -55,7 +54,7 @@ public class MainApp {
         main.addRouteBuilder(new GraphicCreator());
         
         //Route8 statistic2FB (process -> API)
-        //main.addRouteBuilder(new StatisticToFacebook());
+        main.addRouteBuilder(new StatisticToFacebook());
 
         
         //IN AUT NICHT MOEGLICH --> WIE BEI MR1 BESPROCHEN
@@ -65,18 +64,14 @@ public class MainApp {
         //Route10 statistic2Website with processor for PDF (process -> API)
         main.addRouteBuilder(new StatisticToWebsite()); 
 
-        //Route11 aggregateEmail (process -> outbound)
-        main.addRouteBuilder(new AggregateEmail());
-        
-        //merge internal and external offers
-        //Route12
+        //Route11 merge internal and external offers
         main.addRouteBuilder(new AggregateAllOffers());
 
-        //Route13 sendEmail 
+        //Route12 sendEmail 
         main.addRouteBuilder(new EmailToCustomerRoute());
 
-        //Route14 PublishSubscribe
-        //main.addRouteBuilder(new NewsletterRoute());
+        //Route13 PublishSubscribe
+        main.addRouteBuilder(new NewsletterRoute());
 
         
         main.run(args);

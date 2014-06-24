@@ -10,6 +10,7 @@ public class NewsletterRoute extends RouteBuilder{
 
 		from("timer://foo2?period=90000")
 		.routeId("Newsletter-Route")
+		.delay(10000)
 		.setBody(constant("select email from person where newsletter='true' union select email from joboffer where newsletter='true'"))
 		//DB FLAG fehlt ob subscribed
 		.to("jdbc:dataSource")

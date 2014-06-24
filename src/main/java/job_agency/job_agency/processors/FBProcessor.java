@@ -9,7 +9,9 @@ public class FBProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         String body = exchange.getIn().getBody(String.class);
         body = body.replaceAll("\n", "");
-        
+        body = body.replaceAll(" ", "%20");
+        body = body.replaceAll("\t", "    ");
+        //body = " aweaewfaw";
         System.out.println("******************"+ body);
         
 		  String fbendpoint = "facebook://postStatusMessage?"
