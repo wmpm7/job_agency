@@ -24,16 +24,7 @@ public class InsertProcessor implements Processor {
 			date = date + "0";
 		}
 		date = date + qu.person.getBirthday().getDay();
-		/*if (qu.person.getBirthday().getDay()<10){
-			date = "0";
-		}
-		date = date + qu.person.getBirthday().getDay() + "-";
-		
-		if (qu.person.getBirthday().getMonth()<10){
-			date = date + "0";
-		}
-		date = date + qu.person.getBirthday().getMonth() + "-" + qu.person.getBirthday().getYear();
-*/
+
 		sqlstmt = new StringBuilder("insert into Person ");
 		sqlstmt.append("(username,firstname,lastname,sex,birthday,postalcode,city,country,educationself,educationmother,educationfather,email,location,interest,newsletter) "); 
 		sqlstmt.append("values ('");
@@ -41,7 +32,6 @@ public class InsertProcessor implements Processor {
 		sqlstmt.append(qu.person.getFirstName()).append("','"); 
 		sqlstmt.append(qu.person.getLastName()).append("','"); 
 		sqlstmt.append(qu.person.getSex()).append("','"); 
-		//+ "TO_DATE( '" + date + "', 'DD-MM-YYYY' ),'"
 		sqlstmt.append(date).append("','");
 		sqlstmt.append(qu.person.getAddress().getPostalcode()).append("','");
 		sqlstmt.append(qu.person.getAddress().getCity()).append("','");
@@ -52,7 +42,8 @@ public class InsertProcessor implements Processor {
 		sqlstmt.append(qu.person.getEmail()).append("','");
 		sqlstmt.append(qu.person.getLocation()).append("','");
 		sqlstmt.append(qu.person.getInterest()).append("',");
-		//sqlstmt.append(qu.person.getNewsletter());
+		
+		
 		 if (qu.person.getNewsletter().equals("y")){
 			 sqlstmt.append("true");
 		 }

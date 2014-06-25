@@ -11,17 +11,15 @@ public class FBProcessor implements Processor {
         body = body.replaceAll("\n", "");
         body = body.replaceAll(" ", "%20");
         body = body.replaceAll("\t", "    ");
-        //body = " aweaewfaw";
-        System.out.println("******************"+ body);
         
-		  String fbendpoint = "facebook://postStatusMessage?"
-			  		+ "message="+body
-			  		+ "&oAuthAccessToken={{FBAuthAccessToken}}"
-			  		+ "&oAuthAppId={{FBAuthAppId}}"
-			  		+ "&oAuthAppSecret={{FBAuthAppSecret}}";
+        String fbendpoint = "facebook://postStatusMessage?"
+	  		+ "message="+body
+	  		+ "&oAuthAccessToken={{FBAuthAccessToken}}"
+	  		+ "&oAuthAppId={{FBAuthAppId}}"
+	  		+ "&oAuthAppSecret={{FBAuthAppSecret}}";
 		  
         
-		    exchange.getIn().setHeader("recipient",fbendpoint);
+        exchange.getIn().setHeader("recipient",fbendpoint);
     }
 
 }

@@ -10,7 +10,6 @@ public class QueueToDBRoute extends RouteBuilder{
 	public void configure() throws Exception {
 		from("jms:FilteredInsertQueue")
 		.routeId("QueueToDB-Route")
-			//.to("jms:emailQueue") //zum testen des email senden, da E-Mail content noch fehlt
 			.to("jms:internalOfferQueue")
 			.to("jms:karriereQueue")
 			.process(new InsertProcessor())

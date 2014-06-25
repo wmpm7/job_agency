@@ -17,13 +17,10 @@ public class JobofferToQueueRoute extends RouteBuilder{
 		jaxb.setContext(jc); 
 		DataFormat df = jaxb;
 		
-		
-		
 		from("file:inbound/joboffers?noop=true")
 		.routeId("JobofferToQueue-Route")
 			.unmarshal(df)
 			.to("jms:JobofferQueue")
-			//.to("file:target/test2")
 			.log("JobofferQueue:new Joboffer added from inbound/joboffers");
 		
 	}

@@ -28,7 +28,7 @@ public class SubscribeProcessor implements Processor{
 		for(int i =0; i<data.size();i++)
 		{
 			Map<?, ?> row = (Map<?, ?>)data.get(i);
-			System.out.println("**************************************" + row.get("EMAIL") + "*************************");
+			LOG.debug("**************************************" + row.get("EMAIL") + "*************************");
 			list = list + endpoint + row.get("EMAIL") + ",";
 	    }
 		if (list.length()>0){

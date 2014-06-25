@@ -54,7 +54,7 @@ public class MainApp {
         main.addRouteBuilder(new GraphicCreator());
         
         //Route8 statistic2FB (process -> API)
-        main.addRouteBuilder(new StatisticToFacebook());
+        //main.addRouteBuilder(new StatisticToFacebook());
 
         
         //IN AUT NICHT MOEGLICH --> WIE BEI MR1 BESPROCHEN

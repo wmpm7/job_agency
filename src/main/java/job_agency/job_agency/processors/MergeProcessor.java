@@ -1,7 +1,6 @@
 package job_agency.job_agency.processors;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 
 import org.apache.camel.Exchange;
@@ -25,9 +24,6 @@ public class MergeProcessor implements Processor {
 			newbody.append(line + "\n");
 		}
 		br.close();
-		
-		//File file = new File("target/fromApi/aggregated/internal_offers_" + filename);
-		//file.delete();
 		
 		exchange.getIn().setBody(newbody.toString() + body);
 	}
